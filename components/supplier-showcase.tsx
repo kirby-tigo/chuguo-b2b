@@ -1,9 +1,10 @@
 import Link from "next/link"
-import Image from "next/image"
+import { Image } from "@/components/ui/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Star } from "lucide-react"
+import { getOptimizedImageUrl, getImageSizes } from "@/lib/image-utils"
 
 export function SupplierShowcase() {
   const suppliers = [
@@ -14,7 +15,7 @@ export function SupplierShowcase() {
       specialty: "热带水果",
       rating: 4.8,
       verified: true,
-      image: "/placeholder.svg?height=100&width=100&query=fruit farm logo",
+      image: "/fruit-company-logo-1.png",
       years: 8,
     },
     {
@@ -24,7 +25,7 @@ export function SupplierShowcase() {
       specialty: "苹果、梨",
       rating: 4.9,
       verified: true,
-      image: "/placeholder.svg?height=100&width=100&query=apple orchard logo",
+      image: "/fruit-company-logo-1.png",
       years: 12,
     },
     {
@@ -34,7 +35,7 @@ export function SupplierShowcase() {
       specialty: "芒果、荔枝",
       rating: 4.7,
       verified: true,
-      image: "/placeholder.svg?height=100&width=100&query=mango farm logo",
+      image: "/fruit-company-logo-1.png",
       years: 5,
     },
     {
@@ -44,7 +45,7 @@ export function SupplierShowcase() {
       specialty: "柑橘、龙眼",
       rating: 4.6,
       verified: true,
-      image: "/placeholder.svg?height=100&width=100&query=citrus farm logo",
+      image: "/fruit-company-logo-1.png",
       years: 10,
     },
   ]
@@ -56,7 +57,13 @@ export function SupplierShowcase() {
           <CardContent className="p-6">
             <div className="flex items-center gap-4 mb-4">
               <div className="relative w-16 h-16 rounded-full overflow-hidden border">
-                <Image src={supplier.image || "/placeholder.svg"} alt={supplier.name} fill className="object-cover" />
+                <Image
+                  src={getOptimizedImageUrl(supplier.image, 160, 160)}
+                  alt={supplier.name}
+                  fill
+                  className="object-cover"
+                  sizes="64px"
+                />
               </div>
               <div>
                 <div className="flex items-center gap-2">
@@ -73,33 +80,25 @@ export function SupplierShowcase() {
                 <p className="text-sm text-muted-foreground">{supplier.location}</p>
               </div>
             </div>
-
-            <div className="mb-4">
-              <div className="flex items-center gap-1 mb-1">
-                <div className="flex">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-4 w-4 ${i < Math.floor(supplier.rating) ? "fill-amber-400 text-amber-400" : "fill-muted text-muted-foreground"}`}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm font-medium">{supplier.rating}</span>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">主营品类</span>
+                <span>{supplier.specialty}</span>
               </div>
-              <p className="text-sm">
-                <span className="font-medium">专营:</span> {supplier.specialty}
-              </p>
-              <p className="text-sm">
-                <span className="font-medium">入驻年限:</span> {supplier.years}年
-              </p>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">经营年限</span>
+                <span>{supplier.years}年</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground">评分</span>
+                <div className="flex items-center">
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <span className="ml-1">{supplier.rating}</span>
+                </div>
+              </div>
             </div>
-
-            <Button
-              variant="outline"
-              className="w-full border-emerald-200 hover:bg-emerald-50 hover:border-emerald-600 hover:text-emerald-600"
-              asChild
-            >
-              <Link href={`/suppliers/${supplier.id}`}>查看供应商</Link>
+            <Button variant="outline" className="w-full mt-4" asChild>
+              <Link href={`/suppliers/${supplier.id}`}>查看详情</Link>
             </Button>
           </CardContent>
         </Card>

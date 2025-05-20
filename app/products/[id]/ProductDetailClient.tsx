@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
+import { Image } from "@/components/ui/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
@@ -12,6 +12,7 @@ import { Check, Minus, Plus, ShoppingCart, Star, Truck } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
 import { useAuth } from "@/context/auth-context"
 import { useCart } from "@/context/cart-context"
+import { getOptimizedImageUrl, getImageSizes } from "@/lib/image-utils"
 
 export default function ProductDetailClient({ product }: { product: any }) {
   const router = useRouter()
@@ -78,11 +79,11 @@ export default function ProductDetailClient({ product }: { product: any }) {
         <div className="w-full lg:w-1/2">
           <div className="relative aspect-square overflow-hidden rounded-lg mb-4">
             <Image
-              src={product.images[activeImageIndex] || "/placeholder.svg"}
+              src={getOptimizedImageUrl(product.images[activeImageIndex], 800, 800)}
               alt={product.name}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
+              sizes={getImageSizes(800)}
               priority
             />
           </div>
@@ -96,7 +97,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
                 onClick={() => setActiveImageIndex(index)}
               >
                 <Image
-                  src={image || "/placeholder.svg"}
+                  src={getOptimizedImageUrl(image, 160, 160)}
                   alt={`${product.name} ${index + 1}`}
                   fill
                   className="object-cover"

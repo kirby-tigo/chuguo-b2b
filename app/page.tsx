@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import Image from "next/image"
+import { Image } from "@/components/ui/image"
 import Link from "next/link"
 import { SearchBar } from "@/components/search-bar"
 import { CategoryNav } from "@/components/category-nav"
@@ -36,6 +36,7 @@ import {
 } from "lucide-react"
 import { useAuth } from "@/context/auth-context"
 import { useEffect, useState } from "react"
+import { getOptimizedImageUrl, getImageSizes } from "@/lib/image-utils"
 
 export default function Home() {
   const { isLoggedIn } = useAuth()
@@ -46,7 +47,7 @@ export default function Home() {
   }, [isLoggedIn])
 
   return (
-    <div key={refreshKey} className="w-full">
+    <div className="min-h-screen">
       {/* 主横幅 */}
       <div className="relative bg-gradient-to-r from-emerald-900 to-emerald-700 py-20">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
@@ -126,7 +127,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden">
-              <Image src="/fruit-quality-inspection.png" alt="水果质量检测" fill className="object-cover" />
+              <Image
+                src={getOptimizedImageUrl("/fruit-quality-inspection.png", 800, 400)}
+                alt="水果质量检测"
+                fill
+                className="object-cover"
+                sizes={getImageSizes(800)}
+              />
             </div>
             <div className="space-y-8">
               <div className="flex gap-4">

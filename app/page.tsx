@@ -602,7 +602,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-medium">客服热线</h3>
-                  <p className="text-muted-foreground">00-123-8888（周一至周日 9:00-18:00）</p>
+                  <p className="text-muted-foreground">400-123-8888（周一至周日 9:00-18:00）</p>
                 </div>
               </div>
 

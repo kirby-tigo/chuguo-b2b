@@ -59,7 +59,7 @@ export default function LoginPage() {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">登录账户</CardTitle>
           <CardDescription className="text-center">
-            输入您的账号信息登录楚果集采
+            输入您的账号信息登录果然好忙
             <div className="mt-1 text-sm font-medium text-emerald-600">测试账号：test，密码：123456</div>
           </CardDescription>
         </CardHeader>

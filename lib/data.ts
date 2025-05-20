@@ -1,10 +1,16 @@
-import { User } from '@/types/auth'
-import { hash } from 'bcryptjs'
-import fs from 'fs'
-import path from 'path'
+import type { User } from "@/types/auth"
+import fs from "fs"
+import path from "path"
+import NodeCache from "node-cache"
+import { lock } from "proper-lockfile"
+import { retry } from "ts-retry-promise"
 
-const DATA_DIR = path.join(process.cwd(), 'data')
-const USERS_FILE = path.join(DATA_DIR, 'users.json')
+const DATA_DIR = path.join(process.cwd(), "data")
+const USERS_FILE = path.join(DATA_DIR, "users.json")
+const CACHE_TTL = Number(process.env.CACHE_TTL) || 300 // 默认5分钟缓存
+
+// 初始化缓存
+const cache = new NodeCache({ stdTTL: CACHE_TTL })
 
 // 确保数据目录存在
 if (!fs.existsSync(DATA_DIR)) {
@@ -14,14 +20,14 @@ if (!fs.existsSync(DATA_DIR)) {
 // 如果用户文件不存在，创建一个包含测试用户的文件
 if (!fs.existsSync(USERS_FILE)) {
   const testUser: User = {
-    id: 'user-1',
-    username: 'test',
-    name: '测试用户',
-    email: 'test@example.com',
-    phone: '13800138000',
-    company: '测试公司',
-    role: 'buyer',
-    avatar: '/asian-businessman-portrait.png',
+    id: "user-1",
+    username: "test",
+    name: "测试用户",
+    email: "test@example.com",
+    phone: "13800138000",
+    company: "测试公司",
+    role: "buyer",
+    avatar: "/asian-businessman-portrait.png",
     emailVerified: true,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -30,40 +36,59 @@ if (!fs.existsSync(USERS_FILE)) {
 }
 
 // 读取用户数据
-export function getUsers(): User[] {
+export async function getUsers(): Promise<User[]> {
+  // 尝试从缓存获取
+  const cachedUsers = cache.get<User[]>("users")
+  if (cachedUsers) return cachedUsers
+
   try {
-    const data = fs.readFileSync(USERS_FILE, 'utf-8')
-    return JSON.parse(data)
+    const data = await fs.promises.readFile(USERS_FILE, "utf-8")
+    const users = JSON.parse(data)
+    // 更新缓存
+    cache.set("users", users)
+    return users
   } catch (error) {
-    console.error('Error reading users file:', error)
+    console.error("Error reading users file:", error)
     return []
   }
 }
 
 // 保存用户数据
-export function saveUsers(users: User[]) {
-  try {
-    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2))
-  } catch (error) {
-    console.error('Error saving users file:', error)
-  }
+export async function saveUsers(users: User[]): Promise<void> {
+  return retry(
+    async () => {
+      const release = await lock(USERS_FILE, { retries: 5 })
+      try {
+        await fs.promises.writeFile(USERS_FILE, JSON.stringify(users, null, 2))
+        // 更新缓存
+        cache.set("users", users)
+      } finally {
+        await release()
+      }
+    },
+    {
+      retries: 3,
+      backoff: "EXPONENTIAL",
+      timeout: 5000,
+    },
+  )
 }
 
 // 根据用户名查找用户
-export function findUserByUsername(username: string): User | undefined {
-  const users = getUsers()
-  return users.find(user => user.username === username)
+export async function findUserByUsername(username: string): Promise<User | undefined> {
+  const users = await getUsers()
+  return users.find((user) => user.username === username)
 }
 
 // 根据邮箱查找用户
-export function findUserByEmail(email: string): User | undefined {
-  const users = getUsers()
-  return users.find(user => user.email === email)
+export async function findUserByEmail(email: string): Promise<User | undefined> {
+  const users = await getUsers()
+  return users.find((user) => user.email === email)
 }
 
 // 创建新用户
-export async function createUser(userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>): Promise<User> {
-  const users = getUsers()
+export async function createUser(userData: Omit<User, "id" | "createdAt" | "updatedAt">): Promise<User> {
+  const users = await getUsers()
   const newUser: User = {
     ...userData,
     id: `user-${users.length + 1}`,
@@ -71,14 +96,14 @@ export async function createUser(userData: Omit<User, 'id' | 'createdAt' | 'upda
     updatedAt: new Date().toISOString(),
   }
   users.push(newUser)
-  saveUsers(users)
+  await saveUsers(users)
   return newUser
 }
 
 // 更新用户
-export function updateUser(id: string, userData: Partial<User>): User | undefined {
-  const users = getUsers()
-  const index = users.findIndex(user => user.id === id)
+export async function updateUser(id: string, userData: Partial<User>): Promise<User | undefined> {
+  const users = await getUsers()
+  const index = users.findIndex((user) => user.id === id)
   if (index === -1) return undefined
 
   const updatedUser = {
@@ -87,15 +112,15 @@ export function updateUser(id: string, userData: Partial<User>): User | undefine
     updatedAt: new Date().toISOString(),
   }
   users[index] = updatedUser
-  saveUsers(users)
+  await saveUsers(users)
   return updatedUser
 }
 
 // 删除用户
-export function deleteUser(id: string): boolean {
-  const users = getUsers()
-  const filteredUsers = users.filter(user => user.id !== id)
+export async function deleteUser(id: string): Promise<boolean> {
+  const users = await getUsers()
+  const filteredUsers = users.filter((user) => user.id !== id)
   if (filteredUsers.length === users.length) return false
-  saveUsers(filteredUsers)
+  await saveUsers(filteredUsers)
   return true
-} 
+}

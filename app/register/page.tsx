@@ -13,7 +13,7 @@ export default function RegisterPage() {
       <Card className="w-full max-w-md border-none shadow-lg">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">注册账户</CardTitle>
-          <CardDescription className="text-center">创建您的楚果集采账户，开始批发采购</CardDescription>
+          <CardDescription className="text-center">创建您的果然好忙账户，开始批发采购</CardDescription>
         </CardHeader>
 
         <Tabs defaultValue="buyer" className="w-full">

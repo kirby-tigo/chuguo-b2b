@@ -248,13 +248,7 @@ export default function CheckoutPage() {
                             支付宝
                           </Label>
                           <div className="relative w-8 h-8 ml-2">
-                            <Image
-                              src="/alipay-logo.png"
-                              alt="支付宝"
-                              fill
-                              className="object-contain"
-                              sizes="32px"
-                            />
+                            <Image src="/alipay-logo.png" alt="支付宝" fill className="object-contain" sizes="32px" />
                           </div>
                         </div>
                       </div>

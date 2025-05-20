@@ -13,7 +13,7 @@ export function FeaturedProducts() {
       price: 89,
       unit: "kg",
       minOrder: 10,
-      image: "/placeholder-ujsr5.png",
+      image: "/durian.png",
       discount: true,
       oldPrice: 99,
       rating: 4.8,

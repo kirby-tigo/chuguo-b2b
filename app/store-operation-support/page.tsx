@@ -34,7 +34,7 @@ export default function StoreOperationSupportPage() {
               <Badge className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 mb-4">连锁门店赋能</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">全方位门店运营支持</h1>
               <p className="text-xl text-white/90 mb-8">
-                除了优质的水果供应，楚果集采还为连锁门店提供运营培训、营销策划、品牌建设等全方位支持，帮助门店提升竞争力，实现可持续发展。
+                除了优质的水果供应，果然好忙还为连锁门店提供运营培训、营销策划、品牌建设等全方位支持，帮助门店提升竞争力，实现可持续发展。
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="bg-white text-emerald-800 hover:bg-white/90">
@@ -55,7 +55,7 @@ export default function StoreOperationSupportPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">运营支持概述</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              楚果集采为连锁水果门店提供全方位的运营支持，帮助门店提升运营效率，降低成本，增加收益
+              果然好忙为连锁水果门店提供全方位的运营支持，帮助门店提升运营效率，降低成本，增加收益
             </p>
           </div>
 
@@ -225,7 +225,7 @@ export default function StoreOperationSupportPage() {
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold">门店运营培训</h3>
                   <p className="text-muted-foreground">
-                    楚果集采提供专业的门店运营培训，帮助连锁门店提升运营效率，降低成本，提高顾客满意度。我们的培训内容涵盖商品陈列、库存管理、员工培训等多个方面，由行业资深专家授课，结合实际案例，确保培训内容落地有效。
+                    果然好忙提供专业的门店运营培训，帮助连锁门店提升运营效率，降低成本，提高顾客满意度。我们的培训内容涵盖商品陈列、库存管理、员工培训等多个方面，由行业资深专家授课，结合实际案例，确保培训内容落地有效。
                   </p>
 
                   <div className="space-y-4">
@@ -284,7 +284,7 @@ export default function StoreOperationSupportPage() {
                 <div className="order-1 md:order-2 space-y-6">
                   <h3 className="text-2xl font-bold">营销策划支持</h3>
                   <p className="text-muted-foreground">
-                    楚果集采提供专业的营销策划支持，帮助连锁门店吸引顾客，提升销售。我们的营销团队拥有丰富的水果零售行业经验，能够根据不同门店的特点和目标客群，定制有效的营销方案。
+                    果然好忙提供专业的营销策划支持，帮助连锁门店吸引顾客，提升销售。我们的营销团队拥有丰富的水果零售行业经验，能够根据不同门店的特点和目标客群，定制有效的营销方案。
                   </p>
 
                   <div className="space-y-4">
@@ -335,7 +335,7 @@ export default function StoreOperationSupportPage() {
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold">品牌建设支持</h3>
                   <p className="text-muted-foreground">
-                    楚果集采提供专业的品牌建设支持，帮助连锁门店打造差异化竞争优势。我们的品牌团队拥有丰富的品牌建设经验，能够从品牌定位、视觉形象、门店装修等多个维度，提供全方位的品牌建设支持。
+                    果然好忙提供专业的品牌建设支持，帮助连锁门店打造差异化竞争优势。我们的品牌团队拥有丰富的品牌建设经验，能够从品牌定位、视觉形象、门店装修等多个维度，提供全方位的品牌建设支持。
                   </p>
 
                   <div className="space-y-4">
@@ -399,7 +399,7 @@ export default function StoreOperationSupportPage() {
                 <div className="order-1 md:order-2 space-y-6">
                   <h3 className="text-2xl font-bold">数字化转型支持</h3>
                   <p className="text-muted-foreground">
-                    楚果集采提供专业的数字化转型支持，帮助连锁门店拓展线上渠道，实现全渠道经营。我们的数字化团队拥有丰富的互联网和零售行业经验，能够为门店提供全方位的数字化转型支持。
+                    果然好忙提供专业的数字化转型支持，帮助连锁门店拓展线上渠道，实现全渠道经营。我们的数字化团队拥有丰富的互联网和零售行业经验，能够为门店提供全方位的数字化转型支持。
                   </p>
 
                   <div className="space-y-4">
@@ -461,7 +461,7 @@ export default function StoreOperationSupportPage() {
               {
                 company: "鲜果一号连锁",
                 logo: "/placeholder.svg?height=80&width=80&query=fruit store logo 1",
-                content: "通过楚果集采的运营支持，我们的门店客流量提升了30%，客单价提升了20%，整体销售额提升了50%。",
+                content: "通过果然好忙的运营支持，我们的门店客流量提升了30%，客单价提升了20%，整体销售额提升了50%。",
                 person: "李经理",
                 position: "运营总监",
                 image: "/placeholder.svg?height=200&width=300&query=modern fruit store interior customers shopping",
@@ -470,7 +470,7 @@ export default function StoreOperationSupportPage() {
                 company: "果然鲜水果超市",
                 logo: "/placeholder.svg?height=80&width=80&query=fruit store logo 2",
                 content:
-                  "楚果集采的品牌建设支持帮助我们重新定位品牌，打造了全新的视觉形象，门店改造后，销售额提升了40%。",
+                  "果然好忙的品牌建设支持帮助我们重新定位品牌，打造了全新的视觉形象，门店改造后，销售额提升了40%。",
                 person: "张总",
                 position: "创始人",
                 image: "/placeholder.svg?height=200&width=300&query=fruit store brand redesign before after",
@@ -478,7 +478,7 @@ export default function StoreOperationSupportPage() {
               {
                 company: "优鲜果业",
                 logo: "/placeholder.svg?height=80&width=80&query=fruit store logo 3",
-                content: "通过楚果集采的数字化转型支持，我们成功上线了小程序和线上商城，线上销售额占比从0提升到了30%。",
+                content: "通过果然好忙的数字化转型支持，我们成功上线了小程序和线上商城，线上销售额占比从0提升到了30%。",
                 person: "王老板",
                 position: "CEO",
                 image: "/placeholder.svg?height=200&width=300&query=fruit store mobile app online shopping",
@@ -524,7 +524,7 @@ export default function StoreOperationSupportPage() {
         <div className="mb-16 bg-emerald-50 rounded-xl p-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">我们的优势</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">楚果集采的运营支持具有哪些独特优势</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">果然好忙的运营支持具有哪些独特优势</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

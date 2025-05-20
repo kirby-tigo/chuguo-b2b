@@ -1,4 +1,4 @@
-export type UserRole = 'buyer' | 'supplier' | 'admin'
+export type UserRole = "buyer" | "supplier" | "admin"
 
 export interface User {
   id: string
@@ -12,6 +12,7 @@ export interface User {
   emailVerified: boolean
   createdAt: string
   updatedAt: string
+  password?: string
 }
 
 export interface LoginCredentials {
@@ -20,7 +21,7 @@ export interface LoginCredentials {
   rememberMe?: boolean
 }
 
-export interface RegisterData extends Omit<User, 'id' | 'emailVerified' | 'createdAt' | 'updatedAt'> {
+export interface RegisterData extends Omit<User, "id" | "emailVerified" | "createdAt" | "updatedAt"> {
   password: string
   confirmPassword: string
 }
@@ -40,4 +41,4 @@ export interface PasswordResetConfirm {
   token: string
   newPassword: string
   confirmPassword: string
-} 
+}

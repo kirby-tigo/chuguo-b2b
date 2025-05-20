@@ -51,7 +51,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-lg">公司地址</h3>
                   <p className="text-muted-foreground mb-1">湖北省武汉市洪山区光谷大道77号</p>
-                  <p className="text-sm text-muted-foreground">楚果集采总部大厦</p>
+                  <p className="text-sm text-muted-foreground">果然好忙总部大厦</p>
                 </div>
               </div>
 
@@ -145,12 +145,12 @@ export default function ContactPage() {
           <div className="relative h-[400px] rounded-xl overflow-hidden">
             <Image
               src="/placeholder.svg?height=400&width=1200&query=map of wuhan china"
-              alt="楚果集采公司地址"
+              alt="果然好忙公司地址"
               fill
               className="object-cover"
             />
             <div className="absolute top-4 left-4 bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold mb-2">楚果集采总部</h3>
+              <h3 className="font-semibold mb-2">果然好忙总部</h3>
               <p className="text-sm text-muted-foreground mb-1">
                 <MapPin className="h-4 w-4 inline-block mr-1" />
                 湖北省武汉市洪山区光谷大道77号

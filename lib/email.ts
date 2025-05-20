@@ -1,9 +1,9 @@
-import nodemailer from 'nodemailer'
+import nodemailer from "nodemailer"
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
-  secure: process.env.SMTP_SECURE === 'true',
+  secure: process.env.SMTP_SECURE === "true",
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -16,9 +16,9 @@ export async function sendVerificationEmail(email: string, userId: string) {
   await transporter.sendMail({
     from: process.env.SMTP_FROM,
     to: email,
-    subject: '验证您的邮箱 - 楚果集采',
+    subject: "验证您的邮箱 - 果然好忙",
     html: `
-      <h1>欢迎加入楚果集采</h1>
+      <h1>欢迎加入果然好忙</h1>
       <p>请点击下面的链接验证您的邮箱：</p>
       <a href="${verificationLink}">${verificationLink}</a>
       <p>如果您没有注册账号，请忽略此邮件。</p>
@@ -32,7 +32,7 @@ export async function sendPasswordResetEmail(email: string, token: string) {
   await transporter.sendMail({
     from: process.env.SMTP_FROM,
     to: email,
-    subject: '重置密码 - 楚果集采',
+    subject: "重置密码 - 果然好忙",
     html: `
       <h1>重置密码</h1>
       <p>请点击下面的链接重置您的密码：</p>
@@ -41,4 +41,4 @@ export async function sendPasswordResetEmail(email: string, token: string) {
       <p>此链接将在1小时后失效。</p>
     `,
   })
-} 
+}

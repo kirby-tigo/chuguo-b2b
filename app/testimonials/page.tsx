@@ -91,7 +91,7 @@ export default function TestimonialsPage() {
                     avatar: "/diverse-business-professional.png",
                     logo: "/fruit-company-logo-1.png",
                     content:
-                      "作为一家拥有30多家门店的水果连锁企业，采购和供应链管理一直是我们的痛点。自从与楚果集采合作以来，我们的采购成本降低了15%，库存周转率提高了30%，极大地提升了我们的运营效率。楚果集采不仅提供优质的水果供应，还为我们提供了专业的门店管理系统和数据分析工具，帮助我们更好地了解市场趋势和消费者需求，优化商品结构，提高毛利率。他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。我们非常满意与楚果集采的合作，他们是值得信赖的长期合作伙伴。",
+                      "作为一家拥有30多家门店的水果连锁企业，采购和供应链管理一直是我们的痛点。自从与果然好忙合作以来，我们的采购成本降低了15%，库存周转率提高了30%，极大地提升了我们的运营效率。果然好忙不仅提供优质的水果供应，还为我们提供了专业的门店管理系统和数据分析工具，帮助我们更好地了解市场趋势和消费者需求，优化商品结构，提高毛利率。他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。我们非常满意与果然好忙的合作，他们是值得信赖的长期合作伙伴。",
                     rating: 5,
                     type: "chain",
                     featured: true,
@@ -188,7 +188,7 @@ export default function TestimonialsPage() {
                     position: "采购总监",
                     avatar: "/diverse-business-people-meeting.png",
                     content:
-                      "楚果集采的供应链服务非常专业，他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。平台的数据分析功能也帮助我们更好地了解市场趋势。",
+                      "果然好忙的供应链服务非常专业，他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。平台的数据分析功能也帮助我们更好地了解市场趋势。",
                     rating: 5,
                     type: "chain",
                   },
@@ -198,7 +198,7 @@ export default function TestimonialsPage() {
                     position: "运营经理",
                     avatar: "/diverse-business-team.png",
                     content:
-                      "作为一家拥有20多家门店的连锁企业，采购一直是我们的痛点。自从使用楚果集采平台，我们的采购成本降低了15%，果品损耗率也大幅下降。",
+                      "作为一家拥有20多家门店的连锁企业，采购一直是我们的痛点。自从使用果然好忙平台，我们的采购成本降低了15%，果品损耗率也大幅下降。",
                     rating: 5,
                     type: "chain",
                   },
@@ -208,7 +208,7 @@ export default function TestimonialsPage() {
                     position: "CEO",
                     avatar: "/asian-business-woman-portrait.png",
                     content:
-                      "与楚果集采合作一年多，水果品质稳定，价格合理，最重要的是他们提供的门店管理系统大大提升了我们的运营效率，强烈推荐！",
+                      "与果然好忙合作一年多，水果品质稳定，价格合理，最重要的是他们提供的门店管理系统大大提升了我们的运营效率，强烈推荐！",
                     rating: 5,
                     type: "chain",
                   },
@@ -218,7 +218,7 @@ export default function TestimonialsPage() {
                     position: "采购经理",
                     avatar: "/asian-businessman-portrait.png",
                     content:
-                      "楚果集采的产品种类丰富，质量有保障，价格也很合理。他们的订单处理速度快，物流配送及时，是值得信赖的合作伙伴。",
+                      "果然好忙的产品种类丰富，质量有保障，价格也很合理。他们的订单处理速度快，物流配送及时，是值得信赖的合作伙伴。",
                     rating: 4,
                     type: "wholesale",
                   },
@@ -228,7 +228,7 @@ export default function TestimonialsPage() {
                     position: "销售总监",
                     avatar: "/placeholder-y9fx7.png",
                     content:
-                      "作为供应商，我们非常认可楚果集采的专业性和诚信。平台帮助我们对接了更多的客户，扩大了销售渠道，提高了品牌知名度。",
+                      "作为供应商，我们非常认可果然好忙的专业性和诚信。平台帮助我们对接了更多的客户，扩大了销售渠道，提高了品牌知名度。",
                     rating: 5,
                     type: "supplier",
                   },
@@ -236,9 +236,9 @@ export default function TestimonialsPage() {
                     name: "张伟",
                     company: "果鲜达",
                     position: "总经理",
-                    avatar: "/placeholder.svg?height=100&width=100&query=asian business man portrait 2",
+                    avatar: "/asian-businessman-portrait-2.png",
                     content:
-                      "楚果集采的平台非常易用，订单管理、库存查询、数据分析等功能一应俱全，大大提高了我们的工作效率。客服团队响应迅速，服务态度好。",
+                      "果然好忙的平台非常易用，订单管理、库存查询、数据分析等功能一应俱全，大大提高了我们的工作效率。客服团队响应迅速，服务态度好。",
                     rating: 4,
                     type: "wholesale",
                   },
@@ -248,7 +248,7 @@ export default function TestimonialsPage() {
                     position: "店长",
                     avatar: "/placeholder.svg?height=100&width=100&query=asian business woman portrait 3",
                     content:
-                      "楚果集采提供的水果品质上乘，我们的顾客非常满意。他们的会员管理系统也帮助我们提高了客户粘性和复购率。",
+                      "果然好忙提供的水果品质上乘，我们的顾客非常满意。他们的会员管理系统也帮助我们提高了客户粘性和复购率。",
                     rating: 5,
                     type: "chain",
                   },
@@ -258,7 +258,7 @@ export default function TestimonialsPage() {
                     position: "创始人",
                     avatar: "/placeholder.svg?height=100&width=100&query=asian business man portrait 3",
                     content:
-                      "楚果集采的供应链管理非常高效，从下单到配送，全程透明可追踪。他们的产品质量稳定，价格有竞争力，是理想的合作伙伴。",
+                      "果然好忙的供应链管理非常高效，从下单到配送，全程透明可追踪。他们的产品质量稳定，价格有竞争力，是理想的合作伙伴。",
                     rating: 4,
                     type: "wholesale",
                   },
@@ -268,7 +268,7 @@ export default function TestimonialsPage() {
                     position: "运营总监",
                     avatar: "/placeholder.svg?height=100&width=100&query=asian business man portrait 4",
                     content:
-                      "通过楚果集采平台，我们的产品能够直接对接终端客户，减少了中间环节，提高了利润率。平台的结算也很及时，解决了我们的资金周转问题。",
+                      "通过果然好忙平台，我们的产品能够直接对接终端客户，减少了中间环节，提高了利润率。平台的结算也很及时，解决了我们的资金周转问题。",
                     rating: 5,
                     type: "supplier",
                   },
@@ -327,7 +327,7 @@ export default function TestimonialsPage() {
             <div className="text-center py-12">
               <h2 className="text-2xl font-bold mb-4">精选客户评价</h2>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-                这些是我们精选的客户成功案例，展示了楚果集采如何帮助客户解决问题，提升业绩。
+                这些是我们精选的客户成功案例，展示了果然好忙如何帮助客户解决问题，提升业绩。
               </p>
               {/* 这里可以添加精选评价的具体内容 */}
             </div>
@@ -424,7 +424,7 @@ export default function TestimonialsPage() {
         <div className="bg-emerald-50 rounded-xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-3">分享您的故事</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            如果您是楚果集采的客户，我们很乐意听到您的使用体验和成功故事。您的反馈将帮助我们不断改进服务，也可能帮助其他企业解决类似的挑战。
+            如果您是果然好忙的客户，我们很乐意听到您的使用体验和成功故事。您的反馈将帮助我们不断改进服务，也可能帮助其他企业解决类似的挑战。
           </p>
           <Button className="bg-emerald-600 hover:bg-emerald-700">提交您的评价</Button>
         </div>

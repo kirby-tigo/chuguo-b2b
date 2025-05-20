@@ -11,7 +11,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xl">
                 楚
               </div>
-              <span className="text-xl font-bold">楚果集采</span>
+              <span className="text-xl font-bold">果然好忙</span>
             </Link>
             <p className="text-muted-foreground mb-4">专业的B2B水果批发平台，为您提供新鲜优质的水果</p>
             <div className="flex space-x-4">
@@ -77,7 +77,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t pt-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} 楚果集采. 保留所有权利.</p>
+          <p>&copy; {new Date().getFullYear()} 果然好忙. 保留所有权利.</p>
         </div>
       </div>
     </footer>

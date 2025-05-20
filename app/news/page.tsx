@@ -123,7 +123,7 @@ export default function NewsPage() {
                     title: "2023年水果进出口政策解读",
                     excerpt:
                       "近期国家出台了一系列水果进出口相关政策。本文对这些政策进行了详细解读，并分析了对行业的影响...",
-                    image: "/placeholder.svg?height=200&width=300&query=fruit import export policy document",
+                    image: "/fruit-import-export-policy.png",
                     date: "2023-08-25",
                     author: "赵分析师",
                     category: "政策法规",
@@ -360,25 +360,25 @@ export default function NewsPage() {
               {
                 id: 11,
                 title: "水果产业链数字化转型白皮书",
-                image: "/placeholder.svg?height=150&width=250&query=digital transformation whitepaper cover",
+                image: "/digital-transformation-whitepaper-cover.png",
                 category: "行业报告",
               },
               {
                 id: 12,
                 title: "水果零售门店运营手册",
-                image: "/placeholder.svg?height=150&width=250&query=fruit retail store operations manual",
+                image: "/fruit-retail-operations-manual.png",
                 category: "实操指南",
               },
               {
                 id: 13,
                 title: "全球水果贸易地图",
-                image: "/placeholder.svg?height=150&width=250&query=global fruit trade map infographic",
+                image: "/global-fruit-trade-infographic.png",
                 category: "数据图表",
               },
               {
                 id: 14,
                 title: "水果品类管理最佳实践",
-                image: "/placeholder.svg?height=150&width=250&query=fruit category management best practices",
+                image: "/fruit-category-management.png",
                 category: "案例研究",
               },
             ].map((resource) => (

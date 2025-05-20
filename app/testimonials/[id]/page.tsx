@@ -14,7 +14,7 @@ const testimonialDetails = {
   avatar: "/diverse-business-professional.png",
   logo: "/fruit-company-logo-1.png",
   content:
-    "作为一家拥有30多家门店的水果连锁企业，采购和供应链管理一直是我们的痛点。自从与楚果集采合作以来，我们的采购成本降低了15%，库存周转率提高了30%，极大地提升了我们的运营效率。楚果集采不仅提供优质的水果供应，还为我们提供了专业的门店管理系统和数据分析工具，帮助我们更好地了解市场趋势和消费者需求，优化商品结构，提高毛利率。他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。我们非常满意与楚果集采的合作，他们是值得信赖的长期合作伙伴。",
+    "作为一家拥有30多家门店的水果连锁企业，采购和供应链管理一直是我们的痛点。自从与果然好忙合作以来，我们的采购成本降低了15%，库存周转率提高了30%，极大地提升了我们的运营效率。果然好忙不仅提供优质的水果供应，还为我们提供了专业的门店管理系统和数据分析工具，帮助我们更好地了解市场趋势和消费者需求，优化商品结构，提高毛利率。他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。我们非常满意与果然好忙的合作，他们是值得信赖的长期合作伙伴。",
   rating: 5,
   type: "chain",
   location: "广东省广州市",
@@ -277,7 +277,7 @@ export default function TestimonialDetailPage({ params }: { params: { id: string
                     {
                       name: "李明",
                       company: "果然鲜水果超市",
-                      content: "楚果集采的供应链服务非常专业，他们的冷链物流确保了水果的新鲜度...",
+                      content: "果然好忙的供应链服务非常专业，他们的冷链物流确保了水果的新鲜度...",
                     },
                     {
                       name: "王晓华",
@@ -287,7 +287,7 @@ export default function TestimonialDetailPage({ params }: { params: { id: string
                     {
                       name: "赵琳",
                       company: "鲜果汇",
-                      content: "与楚果集采合作一年多，水果品质稳定，价格合理，最重要的是...",
+                      content: "与果然好忙合作一年多，水果品质稳定，价格合理，最重要的是...",
                     },
                   ].map((item, i) => (
                     <div key={i} className="border-b pb-4 last:border-0 last:pb-0">

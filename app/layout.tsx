@@ -12,9 +12,9 @@ import { OrderProvider } from "@/context/order-context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "楚果集采 - 专业水果B2B采购平台",
-  description: "楚果集采是中国领先的水果B2B采购平台，为连锁商超、水果店、餐饮企业提供一站式水果采购解决方案。",
-    generator: 'v0.dev'
+  title: "果然好忙 - 专业水果B2B采购平台",
+  description: "果然好忙是中国领先的水果B2B采购平台，为连锁商超、水果店、餐饮企业提供一站式水果采购解决方案。",
+  generator: "v0.dev",
 }
 
 export default function RootLayout({

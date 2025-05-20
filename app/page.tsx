@@ -44,7 +44,7 @@ export default function Home() {
               专业的B2B水果批发平台
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              楚果集采
+              果然好忙
               <span className="block text-emerald-300">新鲜直达，品质保障</span>
             </h1>
             <p className="text-lg text-white/80 max-w-md">连接全球优质水果产地，为批发商提供一站式采购解决方案</p>
@@ -107,7 +107,7 @@ export default function Home() {
       <div className="bg-white py-16 mb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3">为什么选择楚果集采</h2>
+            <h2 className="text-3xl font-bold mb-3">为什么选择果然好忙</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               我们致力于为批发商和连锁门店提供最优质的水果采购体验，成为您值得信赖的长期合作伙伴
             </p>
@@ -176,7 +176,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">连锁门店赋能</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              楚果集采为连锁水果门店提供全方位的供应链解决方案，助力门店降本增效，实现业务增长
+              果然好忙为连锁水果门店提供全方位的供应链解决方案，助力门店降本增效，实现业务增长
             </p>
           </div>
 
@@ -279,7 +279,7 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-2xl font-bold">全方位门店运营支持</h3>
               <p className="text-muted-foreground">
-                除了优质的水果供应，楚果集采还为连锁门店提供运营培训、营销策划、品牌建设等全方位支持，帮助门店提升竞争力，实现可持续发展。
+                除了优质的水果供应，果然好忙还为连锁门店提供运营培训、营销策划、品牌建设等全方位支持，帮助门店提升竞争力，实现可持续发展。
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-2">
@@ -359,7 +359,7 @@ export default function Home() {
                 company: "鲜果一号连锁",
                 avatar: "/diverse-business-professional.png",
                 content:
-                  "与楚果集采合作一年多，水果品质稳定，价格合理，最重要的是他们提供的门店管理系统大大提升了我们的运营效率，强烈推荐！",
+                  "与果然好忙合作一年多，水果品质稳定，价格合理，最重要的是他们提供的门店管理系统大大提升了我们的运营效率，强烈推荐！",
                 rating: 5,
               },
               {
@@ -367,7 +367,7 @@ export default function Home() {
                 company: "果然鲜水果超市",
                 avatar: "/diverse-business-people-meeting.png",
                 content:
-                  "作为一家拥有20多家门店的连锁企业，采购一直是我们的痛点。自从使用楚果集采平台，我们的采购成本降低了15%，果品损耗率也大幅下降。",
+                  "作为一家拥有20多家门店的连锁企业，采购一直是我们的痛点。自从使用果然好忙平台，我们的采购成本降低了15%，果品损耗率也大幅下降。",
                 rating: 5,
               },
               {
@@ -375,7 +375,7 @@ export default function Home() {
                 company: "优鲜果业",
                 avatar: "/diverse-business-team.png",
                 content:
-                  "楚果集采的供应链服务非常专业，他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。平台的数据分析功能也帮助我们更好地了解市场趋势。",
+                  "果然好忙的供应链服务非常专业，他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。平台的数据分析功能也帮助我们更好地了解市场趋势。",
                 rating: 4,
               },
             ].map((testimonial, i) => (
@@ -513,16 +513,16 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">常见问题</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">解答您关心的问题，帮助您更好地了解楚果集采平台</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">解答您关心的问题，帮助您更好地了解果然好忙平台</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div>
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>如何注册成为楚果集采的会员？</AccordionTrigger>
+                  <AccordionTrigger>如何注册成为果然好忙的会员？</AccordionTrigger>
                   <AccordionContent>
-                    注册成为楚果集采会员非常简单。点击网站右上角的"注册"按钮，填写公司信息、联系人信息和营业执照等资料，提交审核后，我们会在1-2个工作日内完成审核，并通过短信和邮件通知您审核结果。
+                    注册成为果然好忙会员非常简单。点击网站右上角的"注册"按钮，填写公司信息、联系人信息和营业执照等资料，提交审核后，我们会在1-2个工作日内完成审核，并通过短信和邮件通知您审核结果。
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -644,7 +644,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-2">值得信赖的批发平台</h2>
-            <p className="text-emerald-100">数以万计的批发商选择楚果集采</p>
+            <p className="text-emerald-100">数以万计的批发商选择果然好忙</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[

@@ -253,7 +253,7 @@ export default function SuppliersPage() {
               <div>
                 <h2 className="text-2xl font-bold mb-4">成为我们的供应商</h2>
                 <p className="mb-6">
-                  加入楚果集采平台，连接全国数万批发商，拓展您的销售渠道，提升品牌影响力。我们提供专业的运营支持和营销推广，帮助您实现业务增长。
+                  加入果然好忙平台，连接全国数万批发商，拓展您的销售渠道，提升品牌影响力。我们提供专业的运营支持和营销推广，帮助您实现业务增长。
                 </p>
                 <Button variant="secondary" size="lg" asChild>
                   <Link href="/supplier-application">立即申请入驻</Link>

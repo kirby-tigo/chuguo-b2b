@@ -10,21 +10,33 @@ export async function POST(request: Request) {
 
     // 验证输入
     if (!username || !password || !email || !name || !phone || !company) {
-      return NextResponse.json<AuthResponse>({ success: false, error: "所有字段都是必填的" }, { status: 400 })
+      return NextResponse.json<AuthResponse>(
+        { success: false, error: "请填写所有必填字段" },
+        { status: 400 }
+      )
     }
 
     if (password !== confirmPassword) {
-      return NextResponse.json<AuthResponse>({ success: false, error: "两次输入的密码不一致" }, { status: 400 })
+      return NextResponse.json<AuthResponse>(
+        { success: false, error: "密码不匹配" },
+        { status: 400 }
+      )
     }
 
     // 检查用户名是否已存在
     if (await findUserByUsername(username)) {
-      return NextResponse.json<AuthResponse>({ success: false, error: "用户名已被注册" }, { status: 400 })
+      return NextResponse.json<AuthResponse>(
+        { success: false, error: "注册失败" },
+        { status: 400 }
+      )
     }
 
     // 检查邮箱是否已存在
     if (await findUserByEmail(email)) {
-      return NextResponse.json<AuthResponse>({ success: false, error: "邮箱已被注册" }, { status: 400 })
+      return NextResponse.json<AuthResponse>(
+        { success: false, error: "注册失败" },
+        { status: 400 }
+      )
     }
 
     // 加密密码
@@ -49,7 +61,11 @@ export async function POST(request: Request) {
       user: userWithoutPassword,
     })
   } catch (error) {
+    // 记录错误但不返回具体错误信息
     console.error("Register error:", error)
-    return NextResponse.json<AuthResponse>({ success: false, error: "注册失败，请稍后重试" }, { status: 500 })
+    return NextResponse.json<AuthResponse>(
+      { success: false, error: "系统错误，请稍后重试" },
+      { status: 500 }
+    )
   }
 }

@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     // 验证输入
     if (!username || !password) {
       return NextResponse.json<AuthResponse>(
-        { success: false, error: "用户名和密码不能为空" },
+        { success: false, error: "请填写所有必填字段" },
         { status: 400 },
       )
     }
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
 
     if (!user) {
       return NextResponse.json<AuthResponse>(
-        { success: false, error: "用户名或密码错误" },
+        { success: false, error: "登录失败" },
         { status: 401 },
       )
     }
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
     const isValidPassword = await bcrypt.compare(password, user.password || "")
     if (!isValidPassword) {
       return NextResponse.json<AuthResponse>(
-        { success: false, error: "用户名或密码错误" },
+        { success: false, error: "登录失败" },
         { status: 401 },
       )
     }
@@ -67,9 +67,10 @@ export async function POST(request: Request) {
 
     return response
   } catch (error) {
+    // 记录错误但不返回具体错误信息
     console.error("Login error:", error)
     return NextResponse.json<AuthResponse>(
-      { success: false, error: "登录失败，请稍后重试" },
+      { success: false, error: "系统错误，请稍后重试" },
       { status: 500 },
     )
   }

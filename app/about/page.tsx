@@ -9,7 +9,7 @@ export default function AboutPage() {
     <div className="bg-gray-50 min-h-screen">
       {/* 顶部横幅 */}
       <div className="relative h-[400px] overflow-hidden">
-        <Image src="/fruit-wholesale-market-aerial.png" alt="果然好忙" fill className="object-cover" />
+        <Image src="/placeholder.png" alt="果然好忙" fill className="object-cover" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white max-w-3xl px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">关于果然好忙</h1>
@@ -210,24 +210,24 @@ export default function AboutPage() {
                 name: "李明",
                 position: "COO",
                 bio: "曾任某大型农产品集团运营总监，专注供应链优化和运营管理",
-                image: "/placeholder.svg?height=300&width=300&query=asian business man coo portrait",
+                image: "/placeholder.png",
               },
               {
                 name: "王晓华",
                 position: "CTO",
                 bio: "前某知名科技公司技术总监，拥有丰富的B2B平台开发经验",
-                image: "/placeholder.svg?height=300&width=300&query=asian business woman cto portrait",
+                image: "/placeholder.png",
               },
               {
                 name: "赵琳",
                 position: "CMO",
                 bio: "曾任某知名营销机构副总裁，擅长B2B市场策略和品牌建设",
-                image: "/placeholder.svg?height=300&width=300&query=asian business woman cmo portrait",
+                image: "/placeholder.png",
               },
             ].map((member, i) => (
               <Card key={i} className="border-none shadow-md overflow-hidden">
                 <div className="relative h-64">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                  <Image src={member.image || "/placeholder.png"} alt={member.name} fill className="object-cover" />
                 </div>
                 <CardContent className="p-4">
                   <h3 className="font-semibold text-lg">{member.name}</h3>
@@ -251,8 +251,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="relative h-[400px] rounded-xl overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600&query=diverse business team meeting in modern office"
-                alt="果然好忙企业文化"
+                src="/placeholder.png"
+                alt="品牌建设支持"
                 fill
                 className="object-cover"
               />

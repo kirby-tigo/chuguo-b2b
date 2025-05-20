@@ -1,5 +1,5 @@
 import type { User } from "@/types/auth"
-import fs from "fs"
+import fs from "fs/promises"
 import path from "path"
 import NodeCache from "node-cache"
 import { lock } from "proper-lockfile"
@@ -12,38 +12,40 @@ const CACHE_TTL = Number(process.env.CACHE_TTL) || 300 // 默认5分钟缓存
 // 初始化缓存
 const cache = new NodeCache({ stdTTL: CACHE_TTL })
 
-// 确保数据目录存在
-try {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true })
+// 初始化数据目录和文件
+async function initializeData() {
+  try {
+    // 确保数据目录存在
+    await fs.mkdir(DATA_DIR, { recursive: true })
+
+    // 检查用户文件是否存在
+    try {
+      await fs.access(USERS_FILE)
+    } catch {
+      // 如果文件不存在，创建测试用户
+      const testUser: User = {
+        id: "user-1",
+        username: "test",
+        name: "测试用户",
+        email: "test@example.com",
+        phone: "13800138000",
+        company: "测试公司",
+        role: "buyer",
+        avatar: "/asian-businessman-portrait.png",
+        emailVerified: true,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }
+      await fs.writeFile(USERS_FILE, JSON.stringify([testUser], null, 2))
+    }
+  } catch (error) {
+    console.error("Error initializing data:", error)
+    throw new Error("Failed to initialize data")
   }
-} catch (error) {
-  console.error("Error creating data directory:", error)
-  throw new Error("Failed to initialize data directory")
 }
 
-// 如果用户文件不存在，创建一个包含测试用户的文件
-try {
-  if (!fs.existsSync(USERS_FILE)) {
-    const testUser: User = {
-      id: "user-1",
-      username: "test",
-      name: "测试用户",
-      email: "test@example.com",
-      phone: "13800138000",
-      company: "测试公司",
-      role: "buyer",
-      avatar: "/asian-businessman-portrait.png",
-      emailVerified: true,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    }
-    fs.writeFileSync(USERS_FILE, JSON.stringify([testUser], null, 2))
-  }
-} catch (error) {
-  console.error("Error initializing users file:", error)
-  throw new Error("Failed to initialize users file")
-}
+// 在模块加载时初始化数据
+initializeData().catch(console.error)
 
 // 读取用户数据
 export async function getUsers(): Promise<User[]> {
@@ -52,7 +54,7 @@ export async function getUsers(): Promise<User[]> {
     const cachedUsers = cache.get<User[]>("users")
     if (cachedUsers) return cachedUsers
 
-    const data = await fs.promises.readFile(USERS_FILE, "utf-8")
+    const data = await fs.readFile(USERS_FILE, "utf-8")
     const users = JSON.parse(data)
     // 更新缓存
     cache.set("users", users)
@@ -66,11 +68,11 @@ export async function getUsers(): Promise<User[]> {
 // 保存用户数据
 export async function saveUsers(users: User[]): Promise<void> {
   try {
-    return await retry(
+    await retry(
       async () => {
         const release = await lock(USERS_FILE, { retries: 5 })
         try {
-          await fs.promises.writeFile(USERS_FILE, JSON.stringify(users, null, 2))
+          await fs.writeFile(USERS_FILE, JSON.stringify(users, null, 2))
           // 更新缓存
           cache.set("users", users)
         } finally {

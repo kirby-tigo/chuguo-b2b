@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -32,10 +34,19 @@ import {
   Leaf,
   ThumbsUp,
 } from "lucide-react"
+import { useAuth } from "@/context/auth-context"
+import { useEffect, useState } from "react"
 
 export default function Home() {
+  const { isLoggedIn } = useAuth()
+  const [refreshKey, setRefreshKey] = useState(0)
+
+  useEffect(() => {
+    setRefreshKey((k) => k + 1)
+  }, [isLoggedIn])
+
   return (
-    <div className="w-full">
+    <div key={refreshKey} className="w-full">
       {/* 主横幅 */}
       <div className="relative bg-gradient-to-r from-emerald-900 to-emerald-700 py-20">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">

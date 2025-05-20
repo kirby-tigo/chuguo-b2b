@@ -19,6 +19,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
+  const [rememberMe, setRememberMe] = useState(false)
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -27,25 +28,26 @@ export default function LoginPage() {
 
     // 简单的账号密码验证
     if (username === "test" && password === "123456") {
-      // 模拟登录成功
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          id: "user-1",
-          username: "test",
-          name: "测试用户",
-          email: "test@example.com",
-          phone: "13800138000",
-          company: "测试公司",
-          role: "buyer",
-          avatar: "/asian-businessman-portrait.png",
-        }),
-      )
+      const user = {
+        id: "user-1",
+        username: "test",
+        name: "测试用户",
+        email: "test@example.com",
+        phone: "13800138000",
+        company: "测试公司",
+        role: "buyer",
+        avatar: "/asian-businessman-portrait.png",
+      }
+      if (rememberMe) {
+        localStorage.setItem("user", JSON.stringify(user))
+      } else {
+        sessionStorage.setItem("user", JSON.stringify(user))
+      }
 
       // 延迟跳转，模拟网络请求
       setTimeout(() => {
         setIsLoading(false)
-        router.push("/account")
+        window.location.href = "/"
       }, 1000)
     } else {
       setIsLoading(false)
@@ -101,7 +103,7 @@ export default function LoginPage() {
                   />
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Checkbox id="remember2" />
+                  <Checkbox id="remember2" checked={rememberMe} onCheckedChange={v => setRememberMe(!!v)} />
                   <label
                     htmlFor="remember2"
                     className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"

@@ -16,7 +16,7 @@ const mockUser = {
   phone: "13800138000",
   company: "测试公司",
   role: "buyer",
-  avatar: "/asian-businessman-portrait.png",
+  avatar: "/placeholder.png",
 }
 
 export default function AccountPage() {
@@ -34,7 +34,7 @@ export default function AccountPage() {
               <div className="flex flex-col items-center text-center">
                 <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4">
                   <Image
-                    src={user.avatar || "/asian-businessman-portrait.png"}
+                    src={user.avatar || "/placeholder.png"}
                     alt={user.name}
                     fill
                     className="object-cover"
@@ -136,7 +136,7 @@ export default function AccountPage() {
                     <div className="flex items-center justify-between border-b pb-4">
                       <div className="flex items-center gap-4">
                         <div className="relative w-12 h-12 rounded-md overflow-hidden">
-                          <Image src="/red-apples.png" alt="红苹果" fill className="object-cover" sizes="48px" />
+                          <Image src="/placeholder.png" alt="红苹果" fill className="object-cover" sizes="48px" />
                         </div>
                         <div>
                           <p className="font-medium">订单 #12345</p>
@@ -152,7 +152,7 @@ export default function AccountPage() {
                       <div className="flex items-center gap-4">
                         <div className="relative w-12 h-12 rounded-md overflow-hidden">
                           <Image
-                            src="/vibrant-dragon-fruit.png"
+                            src="/placeholder.png"
                             alt="火龙果"
                             fill
                             className="object-cover"
@@ -172,7 +172,7 @@ export default function AccountPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="relative w-12 h-12 rounded-md overflow-hidden">
-                          <Image src="/navel-oranges.png" alt="脐橙" fill className="object-cover" sizes="48px" />
+                          <Image src="/placeholder.png" alt="脐橙" fill className="object-cover" sizes="48px" />
                         </div>
                         <div>
                           <p className="font-medium">订单 #12343</p>
@@ -232,7 +232,7 @@ export default function AccountPage() {
                         <div className="flex flex-col items-center">
                           <div className="relative w-32 h-32 rounded-full overflow-hidden mb-4">
                             <Image
-                              src={user.avatar || "/asian-businessman-portrait.png"}
+                              src={user.avatar || "/placeholder.png"}
                               alt={user.name}
                               fill
                               className="object-cover"

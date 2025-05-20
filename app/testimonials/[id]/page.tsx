@@ -11,8 +11,8 @@ const testimonialDetails = {
   name: "张志远",
   company: "鲜果一号连锁",
   position: "创始人",
-  avatar: "/diverse-business-professional.png",
-  logo: "/fruit-company-logo-1.png",
+  avatar: "/placeholder.png",
+  logo: "/placeholder.png",
   content:
     "作为一家拥有30多家门店的水果连锁企业，采购和供应链管理一直是我们的痛点。自从与果然好忙合作以来，我们的采购成本降低了15%，库存周转率提高了30%，极大地提升了我们的运营效率。果然好忙不仅提供优质的水果供应，还为我们提供了专业的门店管理系统和数据分析工具，帮助我们更好地了解市场趋势和消费者需求，优化商品结构，提高毛利率。他们的冷链物流确保了水果的新鲜度，客户满意度明显提升。我们非常满意与果然好忙的合作，他们是值得信赖的长期合作伙伴。",
   rating: 5,
@@ -34,15 +34,23 @@ const testimonialDetails = {
     "冷链物流配送，保障水果新鲜度",
   ],
   results: ["采购成本降低15%", "库存周转率提高30%", "损耗率降低40%", "客户满意度提升25%", "门店运营效率提升35%"],
-  images: [
-    "/placeholder.svg?height=300&width=500&query=modern fruit store interior",
-    "/placeholder.svg?height=300&width=500&query=fruit store display counter",
-    "/placeholder.svg?height=300&width=500&query=fruit store management system",
-  ],
+  images: ["/placeholder.png", "/placeholder.png", "/placeholder.png"],
   featured: true,
 }
 
-export default function TestimonialDetailPage({ params }: { params: { id: string } }) {
+// 假设你的客户评价数据如下
+const testimonials = [
+  { id: "1", /* ... */ },
+  { id: "2", /* ... */ },
+  // ... 你实际的评价数据 ...
+]
+
+export function generateStaticParams() {
+  return testimonials.map(item => ({ id: item.id }))
+}
+
+export default function TestimonialDetailPage(props: any) {
+  const { params } = props
   // 在实际应用中，这里会根据ID从API获取具体的评价详情
   const testimonial = testimonialDetails
 
@@ -69,7 +77,7 @@ export default function TestimonialDetailPage({ params }: { params: { id: string
                   <div className="flex items-center gap-4">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden">
                       <Image
-                        src={testimonial.avatar || "/placeholder.svg"}
+                        src={testimonial.avatar || "/placeholder.png"}
                         alt={testimonial.name}
                         fill
                         className="object-cover"
@@ -187,7 +195,7 @@ export default function TestimonialDetailPage({ params }: { params: { id: string
                   {testimonial.images.map((image, i) => (
                     <div key={i} className="relative h-48 rounded-lg overflow-hidden">
                       <Image
-                        src={image || "/placeholder.svg"}
+                        src={image || "/placeholder.png"}
                         alt={`${testimonial.company} 案例图片 ${i + 1}`}
                         fill
                         className="object-cover"
@@ -207,7 +215,7 @@ export default function TestimonialDetailPage({ params }: { params: { id: string
                 <div className="flex items-center gap-4 mb-6">
                   <div className="relative w-16 h-16 rounded-md overflow-hidden bg-gray-100">
                     <Image
-                      src={testimonial.logo || "/placeholder.svg"}
+                      src={testimonial.logo || "/placeholder.png"}
                       alt={testimonial.company}
                       fill
                       className="object-cover"

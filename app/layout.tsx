@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { AuthProvider } from "@/context/auth-context"
 import { CartProvider } from "@/context/cart-context"
 import { OrderProvider } from "@/context/order-context"
+import { FavoritesProvider } from "@/context/favorites-context"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -28,12 +29,14 @@ export default function RootLayout({
         <AuthProvider>
           <CartProvider>
             <OrderProvider>
-              <div className="flex flex-col min-h-screen">
-                <Header />
-                <main className="flex-1">{children}</main>
-                <Footer />
-              </div>
-              <Toaster />
+              <FavoritesProvider>
+                <div className="flex flex-col min-h-screen">
+                  <Header />
+                  <main className="flex-1">{children}</main>
+                  <Footer />
+                </div>
+                <Toaster />
+              </FavoritesProvider>
             </OrderProvider>
           </CartProvider>
         </AuthProvider>

@@ -1,11 +1,21 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ShoppingCart, Heart } from "lucide-react"
+import { useFavorites } from "@/context/favorites-context"
+import { useToast } from "@/components/ui/use-toast"
+import { useAuth } from "@/context/auth-context"
+import { useCart } from "@/context/cart-context"
 
 export function FeaturedProducts() {
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites()
+  const { toast } = useToast()
+  const { isLoggedIn } = useAuth()
+  const { addItem } = useCart()
   const products = [
     {
       id: 1,
@@ -13,7 +23,7 @@ export function FeaturedProducts() {
       price: 89,
       unit: "kg",
       minOrder: 10,
-      image: "/durian.png",
+      image: "/placeholder.png",
       discount: true,
       oldPrice: 99,
       rating: 4.8,
@@ -25,7 +35,7 @@ export function FeaturedProducts() {
       price: 128,
       unit: "kg",
       minOrder: 5,
-      image: "/fresh-cherries.png",
+      image: "/placeholder.png",
       discount: true,
       oldPrice: 158,
       rating: 4.9,
@@ -37,7 +47,7 @@ export function FeaturedProducts() {
       price: 15.8,
       unit: "kg",
       minOrder: 20,
-      image: "/red-apples.png",
+      image: "/placeholder.png",
       discount: false,
       rating: 4.7,
       sales: 2500,
@@ -48,7 +58,7 @@ export function FeaturedProducts() {
       price: 35.9,
       unit: "kg",
       minOrder: 10,
-      image: "/placeholder-rlrrp.png",
+      image: "/placeholder.png",
       discount: false,
       rating: 4.6,
       sales: 1800,
@@ -59,7 +69,7 @@ export function FeaturedProducts() {
       price: 22.5,
       unit: "kg",
       minOrder: 15,
-      image: "/vibrant-dragon-fruit.png",
+      image: "/placeholder.png",
       discount: true,
       oldPrice: 28.8,
       rating: 4.5,
@@ -108,16 +118,49 @@ export function FeaturedProducts() {
                 </span>
               </div>
               <div className="flex gap-2">
-                <Button size="sm" className="w-full bg-emerald-600 hover:bg-emerald-700">
+                <Button
+                  size="sm"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (!isLoggedIn) {
+                      toast({
+                        title: "请先登录",
+                        description: "您需要登录后才能将商品加入购物车",
+                        variant: "destructive",
+                      })
+                      return
+                    }
+                    addItem({
+                      id: String(product.id),
+                      name: product.name,
+                      price: product.price,
+                      image: product.image,
+                      quantity: 1,
+                      unit: product.unit,
+                      minOrder: product.minOrder,
+                    })
+                    toast({
+                      title: "已加入购物车",
+                      description: `${product.name} x 1${product.unit}已成功加入购物车`,
+                    })
+                  }}
+                >
                   <ShoppingCart className="h-4 w-4 mr-1" />
                   加入购物车
                 </Button>
                 <Button
                   size="sm"
-                  variant="outline"
+                  variant={isFavorite(String(product.id)) ? "default" : "outline"}
                   className="px-2 border-emerald-200 hover:bg-emerald-50 hover:border-emerald-600"
+                  onClick={e => {
+                    e.preventDefault()
+                    isFavorite(String(product.id))
+                      ? removeFavorite(String(product.id))
+                      : addFavorite({ ...product, id: String(product.id) })
+                  }}
                 >
-                  <Heart className="h-4 w-4" />
+                  <Heart className={`h-4 w-4 ${isFavorite(String(product.id)) ? "text-red-500 fill-red-500" : ""}`} />
                   <span className="sr-only">收藏</span>
                 </Button>
               </div>

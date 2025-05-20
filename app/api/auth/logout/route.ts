@@ -6,7 +6,6 @@ export async function POST() {
     // 清除认证 cookie
     const response = NextResponse.json({ success: true })
     response.cookies.delete("auth-token")
-
     return response
   } catch (error) {
     // 记录错误但不返回具体错误信息

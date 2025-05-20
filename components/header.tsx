@@ -25,6 +25,10 @@ export default function Header() {
   const { user, isLoggedIn, logout } = useAuth()
   const { totalItems } = useCart()
 
+  // 调试：打印登录状态
+  console.log("[Header] user:", user)
+  console.log("[Header] isLoggedIn:", isLoggedIn)
+
   return (
     <header className="bg-white border-b sticky top-0 z-50">
       <div className="container mx-auto px-4">

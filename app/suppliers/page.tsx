@@ -6,8 +6,105 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Pagination } from "@/components/pagination"
 import Link from "next/link"
-import Image from "next/image"
+import { Image } from "@/components/ui/image"
 import { Star, MapPin, Search, Filter, CheckCircle2 } from "lucide-react"
+
+// 供应商名称与图片路径映射
+const logoMap: Record<string, string> = {
+  "阳光果园": "/sunshine-orchard.jpg",
+  "绿源果业": "/green-source-fruits.jpg",
+  "丰收果园": "/harvest-orchard.jpg",
+  "热带果品": "/tropical-fruits-logo.png",
+  "果然鲜": "/truly-fresh.jpg",
+  "鲜果直供": "/fresh-fruit-direct.jpg",
+  "优鲜果业": "/default-supplier.jpg",
+  "果香四季": "/default-supplier.jpg",
+  "果之源": "/default-supplier.jpg",
+}
+
+const suppliers = [
+  {
+    name: "阳光果园",
+    location: "海南省海口市",
+    specialty: "专营热带水果，主打榴莲、芒果等",
+    rating: 4.8,
+    reviews: 50,
+    verified: true,
+    tags: ["榴莲", "芒果", "苹果"],
+  },
+  {
+    name: "绿源果业",
+    location: "山东省烟台市",
+    specialty: "苹果、梨等温带水果种植基地",
+    rating: 4.9,
+    reviews: 60,
+    verified: true,
+    tags: ["苹果", "梨", "芒果"],
+  },
+  {
+    name: "鲜果直供",
+    location: "广西壮族自治区南宁市",
+    specialty: "南方特色水果批发供应商",
+    rating: 4.7,
+    reviews: 70,
+    verified: true,
+    tags: ["苹果", "梨", "柑橘"],
+  },
+  {
+    name: "丰收果园",
+    location: "福建省漳州市",
+    specialty: "柑橘、龙眼等水果专业供应",
+    rating: 4.6,
+    reviews: 80,
+    verified: true,
+    tags: ["柑橘", "龙眼", "苹果"],
+  },
+  {
+    name: "果然鲜",
+    location: "云南省昆明市",
+    specialty: "高原特色水果种植基地",
+    rating: 4.9,
+    reviews: 90,
+    verified: true,
+    tags: ["蓝莓", "草莓", "苹果"],
+  },
+  {
+    name: "热带果品",
+    location: "广东省湛江市",
+    specialty: "进口水果专业代理",
+    rating: 4.8,
+    reviews: 100,
+    verified: true,
+    tags: ["菠萝", "榴莲", "苹果"],
+  },
+  {
+    name: "优鲜果业",
+    location: "四川省成都市",
+    specialty: "有机水果种植基地",
+    rating: 4.7,
+    reviews: 55,
+    verified: false,
+    tags: ["葡萄", "樱桃", "苹果"],
+  },
+  {
+    name: "果香四季",
+    location: "陕西省西安市",
+    specialty: "精品水果礼盒定制",
+    rating: 4.6,
+    reviews: 65,
+    verified: false,
+    tags: ["蓝莓", "草莓", "苹果"],
+  },
+  {
+    name: "果之源",
+    location: "辽宁省大连市",
+    specialty: "北方特色水果供应商",
+    rating: 4.5,
+    reviews: 75,
+    verified: false,
+    tags: ["火龙果", "猕猴桃", "苹果"],
+  },
+]
 
 export default function SuppliersPage() {
   return (
@@ -85,15 +182,15 @@ export default function SuppliersPage() {
           <TabsContent value="all">
             {/* 供应商列表 */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {Array.from({ length: 9 }).map((_, i) => (
-                <Card key={i} className="border-none shadow-md hover:shadow-lg transition-shadow">
+              {suppliers.map((supplier, i) => (
+                <Card key={supplier.name} className="border-none shadow-md hover:shadow-lg transition-shadow">
                   <CardContent className="p-0">
                     <div className="relative h-40 bg-gradient-to-r from-emerald-500 to-emerald-700">
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-white">
                           <Image
-                            src={`/placeholder.svg?height=100&width=100&query=fruit company logo ${i + 1}`}
-                            alt={`供应商 ${i + 1}`}
+                            src={logoMap[supplier.name] || "/default-supplier.jpg"}
+                            alt={supplier.name}
                             fill
                             className="object-cover"
                           />
@@ -105,20 +202,8 @@ export default function SuppliersPage() {
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-lg">
-                          {[
-                            "阳光果园",
-                            "绿源果业",
-                            "鲜果直供",
-                            "丰收果园",
-                            "果然鲜",
-                            "热带果品",
-                            "优鲜果业",
-                            "果香四季",
-                            "果之源",
-                          ][i] || `供应商 ${i + 1}`}
-                        </h3>
-                        {i % 2 === 0 && (
+                        <h3 className="font-semibold text-lg">{supplier.name}</h3>
+                        {supplier.verified && (
                           <Badge
                             variant="outline"
                             className="bg-emerald-50 text-emerald-600 hover:bg-emerald-50 border-emerald-200 flex items-center gap-1"
@@ -133,62 +218,23 @@ export default function SuppliersPage() {
                           {Array.from({ length: 5 }).map((_, j) => (
                             <Star
                               key={j}
-                              className={`h-4 w-4 ${j < 4 + (i % 2) ? "fill-amber-400 text-amber-400" : "fill-muted text-muted-foreground"}`}
+                              className={`h-4 w-4 ${j < Math.round(supplier.rating) ? "fill-amber-400 text-amber-400" : "fill-muted text-muted-foreground"}`}
                             />
                           ))}
                         </div>
-                        <span className="text-sm text-muted-foreground">({50 + i * 10})</span>
+                        <span className="text-sm text-muted-foreground">({supplier.reviews})</span>
                       </div>
                       <div className="flex items-center text-sm text-muted-foreground mb-3">
                         <MapPin className="h-4 w-4 mr-1" />
-                        <span>
-                          {[
-                            "海南省海口市",
-                            "山东省烟台市",
-                            "广西壮族自治区南宁市",
-                            "福建省漳州市",
-                            "云南省昆明市",
-                            "广东省湛江市",
-                            "四川省成都市",
-                            "陕西省西安市",
-                            "辽宁省大连市",
-                          ][i] || "中国"}
-                        </span>
+                        <span>{supplier.location}</span>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-4">
-                        {[
-                          "专营热带水果，主打榴莲、芒果等",
-                          "苹果、梨等温带水果种植基地",
-                          "南方特色水果批发供应商",
-                          "柑橘、龙眼等水果专业供应",
-                          "高原特色水果种植基地",
-                          "进口水果专业代理",
-                          "有机水果种植基地",
-                          "精品水果礼盒定制",
-                          "北方特色水果供应商",
-                        ][i] || "水果批发供应商"}
-                      </p>
+                      <p className="text-sm text-muted-foreground mb-4">{supplier.specialty}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {[
-                          "榴莲",
-                          "芒果",
-                          "苹果",
-                          "梨",
-                          "柑橘",
-                          "龙眼",
-                          "葡萄",
-                          "樱桃",
-                          "蓝莓",
-                          "草莓",
-                          "火龙果",
-                          "猕猴桃",
-                        ]
-                          .slice(i, i + 3)
-                          .map((fruit) => (
-                            <Badge key={fruit} variant="secondary" className="bg-gray-100">
-                              {fruit}
-                            </Badge>
-                          ))}
+                        {supplier.tags.map((fruit) => (
+                          <Badge key={fruit} variant="secondary" className="bg-gray-100">
+                            {fruit}
+                          </Badge>
+                        ))}
                       </div>
                       <Button className="w-full bg-emerald-600 hover:bg-emerald-700" asChild>
                         <Link href={`/suppliers/${i + 1}`}>查看详情</Link>

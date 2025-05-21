@@ -16,7 +16,7 @@ const mockUser = {
   phone: "13800138000",
   company: "测试公司",
   role: "buyer",
-  avatar: "/placeholder.png",
+  avatar: "/default-supplier.jpg",
 }
 
 export default function AccountPage() {
@@ -136,7 +136,7 @@ export default function AccountPage() {
                     <div className="flex items-center justify-between border-b pb-4">
                       <div className="flex items-center gap-4">
                         <div className="relative w-12 h-12 rounded-md overflow-hidden">
-                          <Image src="/placeholder.png" alt="红苹果" fill className="object-cover" sizes="48px" />
+                          <Image src="/red-apples.png" alt="红苹果" fill className="object-cover" sizes="48px" />
                         </div>
                         <div>
                           <p className="font-medium">订单 #12345</p>
@@ -152,7 +152,7 @@ export default function AccountPage() {
                       <div className="flex items-center gap-4">
                         <div className="relative w-12 h-12 rounded-md overflow-hidden">
                           <Image
-                            src="/placeholder.png"
+                            src="/vibrant-dragon-fruit.png"
                             alt="火龙果"
                             fill
                             className="object-cover"
@@ -172,7 +172,7 @@ export default function AccountPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="relative w-12 h-12 rounded-md overflow-hidden">
-                          <Image src="/placeholder.png" alt="脐橙" fill className="object-cover" sizes="48px" />
+                          <Image src="/navel-oranges.png" alt="脐橙" fill className="object-cover" sizes="48px" />
                         </div>
                         <div>
                           <p className="font-medium">订单 #12343</p>

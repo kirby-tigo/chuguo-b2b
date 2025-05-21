@@ -89,8 +89,9 @@ export default function OrdersPage() {
                     {order.items.map((item) => (
                       <div key={item.id} className="flex items-center gap-4 mb-4">
                         <div className="relative w-16 h-16 rounded-md overflow-hidden">
+                          console.log("订单图片src", item.image)
                           <Image
-                            src={item.image || "/placeholder.svg"}
+                            src={item.image || "/placeholder.png"}
                             alt={item.name}
                             fill
                             className="object-cover"

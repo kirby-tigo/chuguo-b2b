@@ -6,6 +6,16 @@ import { Button } from "@/components/ui/button"
 import { Star } from "lucide-react"
 import { getOptimizedImageUrl, getImageSizes } from "@/lib/image-utils"
 
+// 供应商名称与图片路径映射
+const logoMap: Record<string, string> = {
+  "阳光果园": "/sunshine-orchard.jpg",
+  "绿源果业": "/green-source-fruits.jpg",
+  "丰收果园": "/harvest-orchard.jpg",
+  "热带果品": "/tropical-fruits-logo.png",
+  // "果然鲜": "/truly-fresh.jpg", // 不在前4个
+  // "鲜果直供": "/fresh-fruit-direct.jpg", // 不在前4个
+}
+
 export function SupplierShowcase() {
   const suppliers = [
     {
@@ -15,7 +25,6 @@ export function SupplierShowcase() {
       specialty: "热带水果",
       rating: 4.8,
       verified: true,
-      image: "/fruit-company-logo-1.png",
       years: 8,
     },
     {
@@ -25,40 +34,38 @@ export function SupplierShowcase() {
       specialty: "苹果、梨",
       rating: 4.9,
       verified: true,
-      image: "/fruit-company-logo-1.png",
       years: 12,
     },
     {
       id: 3,
-      name: "鲜果直供",
-      location: "广西壮族自治区南宁市",
-      specialty: "芒果、荔枝",
-      rating: 4.7,
-      verified: true,
-      image: "/fruit-company-logo-1.png",
-      years: 5,
-    },
-    {
-      id: 4,
       name: "丰收果园",
       location: "福建省漳州市",
       specialty: "柑橘、龙眼",
       rating: 4.6,
       verified: true,
-      image: "/fruit-company-logo-1.png",
       years: 10,
     },
+    {
+      id: 4,
+      name: "热带果品",
+      location: "广东省湛江市",
+      specialty: "菠萝、榴莲",
+      rating: 4.8,
+      verified: true,
+      years: 9,
+    },
+    // 其余供应商不在首页展示
   ]
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {suppliers.map((supplier) => (
+      {suppliers.slice(0, 4).map((supplier) => (
         <Card key={supplier.id} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center gap-4 mb-4">
               <div className="relative w-16 h-16 rounded-full overflow-hidden border">
                 <Image
-                  src={getOptimizedImageUrl(supplier.image, 160, 160)}
+                  src={logoMap[supplier.name] || "/default-supplier.jpg"}
                   alt={supplier.name}
                   fill
                   className="object-cover"

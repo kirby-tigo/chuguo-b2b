@@ -61,10 +61,8 @@ export async function POST(request: Request) {
       user: userWithoutPassword,
     })
   } catch (error) {
-    // 记录错误但不返回具体错误信息
-    console.error("Register error:", error)
-    return NextResponse.json<AuthResponse>(
-      { success: false, error: "系统错误，请稍后重试" },
+    return NextResponse.json(
+      { success: false, error: "注册失败，请稍后重试" },
       { status: 500 }
     )
   }

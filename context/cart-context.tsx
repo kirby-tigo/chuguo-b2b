@@ -32,20 +32,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // 初始化时从localStorage加载购物车数据
   useEffect(() => {
-    if (isLoggedIn) {
-      const storedCart = localStorage.getItem("cart")
-      if (storedCart) {
-        try {
-          setItems(JSON.parse(storedCart))
-        } catch (e) {
-          console.error("Failed to parse stored cart", e)
-          localStorage.removeItem("cart")
-        }
+    const storedCart = localStorage.getItem("cart")
+    if (storedCart) {
+      try {
+        setItems(JSON.parse(storedCart))
+      } catch (e) {
+        localStorage.removeItem("cart")
       }
     } else {
       setItems([])
     }
-  }, [isLoggedIn])
+  }, [])
 
   // 当购物车更新时，保存到localStorage
   useEffect(() => {
@@ -57,10 +54,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const addItem = (item: CartItem) => {
     setItems((prevItems) => {
       const existingItem = prevItems.find((i) => i.id === item.id)
+      
       if (existingItem) {
-        return prevItems.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i))
+        const newItems = prevItems.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i))
+        return newItems
       } else {
-        return [...prevItems, item]
+        const newItems = [...prevItems, item]
+        return newItems
       }
     })
   }

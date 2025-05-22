@@ -10,24 +10,14 @@ import { Search } from "lucide-react"
 export function FAQSearch() {
   const [searchQuery, setSearchQuery] = useState("")
   const [isSearching, setIsSearching] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (!searchQuery.trim()) return
-
-    setIsSearching(true)
-
-    // 模拟搜索请求
+    setLoading(true)
     setTimeout(() => {
-      // 这里可以实现实际的搜索逻辑，例如跳转到搜索结果页或过滤当前页面内容
-      console.log("搜索查询:", searchQuery)
-      setIsSearching(false)
-
-      // 如果需要跳转到搜索结果页，可以使用以下代码
-      // window.location.href = `/faq/search?q=${encodeURIComponent(searchQuery)}`
-
-      // 或者使用 Next.js 的路由
-      // router.push(`/faq/search?q=${encodeURIComponent(searchQuery)}`)
+      setLoading(false)
     }, 500)
   }
 
@@ -43,9 +33,9 @@ export function FAQSearch() {
       <Button
         type="submit"
         className="absolute right-1 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700"
-        disabled={isSearching}
+        disabled={loading}
       >
-        {isSearching ? "搜索中..." : "搜索"}
+        {loading ? "搜索中..." : "搜索"}
       </Button>
     </form>
   )

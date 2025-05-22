@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import {
@@ -25,9 +25,9 @@ export default function Header() {
   const { user, isLoggedIn, logout } = useAuth()
   const { totalItems } = useCart()
 
-  // 调试：打印登录状态
-  console.log("[Header] user:", user)
-  console.log("[Header] isLoggedIn:", isLoggedIn)
+  useEffect(() => {
+    // Remove console.log statements
+  }, [user, isLoggedIn])
 
   return (
     <header className="bg-white border-b sticky top-0 z-50">

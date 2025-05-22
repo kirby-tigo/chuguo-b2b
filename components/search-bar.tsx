@@ -12,8 +12,8 @@ export function SearchBar() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // 实际应用中这里会导航到搜索结果页面
-    console.log("搜索:", searchTerm)
+    if (!searchTerm.trim()) return
+    // 这里可以实现实际的搜索逻辑
   }
 
   return (

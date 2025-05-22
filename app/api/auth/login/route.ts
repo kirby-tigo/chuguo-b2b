@@ -67,11 +67,9 @@ export async function POST(request: Request) {
 
     return response
   } catch (error) {
-    // 记录错误但不返回具体错误信息
-    console.error("Login error:", error)
-    return NextResponse.json<AuthResponse>(
-      { success: false, error: "系统错误，请稍后重试" },
-      { status: 500 },
+    return NextResponse.json(
+      { success: false, error: "登录失败，请稍后重试" },
+      { status: 500 }
     )
   }
 }

@@ -32,20 +32,17 @@ export function OrderProvider({ children }: { children: ReactNode }) {
 
   // 初始化时从localStorage加载订单数据
   useEffect(() => {
-    if (isLoggedIn) {
-      const storedOrders = localStorage.getItem("orders")
-      if (storedOrders) {
-        try {
-          setOrders(JSON.parse(storedOrders))
-        } catch (e) {
-          console.error("Failed to parse stored orders", e)
-          localStorage.removeItem("orders")
-        }
+    const storedOrders = localStorage.getItem("orders")
+    if (storedOrders) {
+      try {
+        setOrders(JSON.parse(storedOrders))
+      } catch (e) {
+        localStorage.removeItem("orders")
       }
     } else {
       setOrders([])
     }
-  }, [isLoggedIn])
+  }, [])
 
   // 当订单更新时，保存到localStorage
   useEffect(() => {

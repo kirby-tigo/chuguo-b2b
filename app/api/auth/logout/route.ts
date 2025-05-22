@@ -8,10 +8,8 @@ export async function POST() {
     response.cookies.delete("auth-token")
     return response
   } catch (error) {
-    // 记录错误但不返回具体错误信息
-    console.error("Logout error:", error)
     return NextResponse.json(
-      { success: false, error: "系统错误，请稍后重试" },
+      { success: false, error: "退出失败，请稍后重试" },
       { status: 500 }
     )
   }

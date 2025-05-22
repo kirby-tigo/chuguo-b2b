@@ -92,6 +92,9 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: 1.1.6
         version: 1.1.6(@types/react-dom@19.1.5(@types/react@19.1.4))(@types/react@19.1.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@slider-captcha/react':
+        specifier: ^1.0.0
+        version: 1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.21(postcss@8.5.3)
@@ -161,6 +164,9 @@ importers:
       react-hook-form:
         specifier: ^7.54.1
         version: 7.56.4(react@19.1.0)
+      react-puzzle-captcha:
+        specifier: ^1.0.2
+        version: 1.0.2(react@19.1.0)
       react-resizable-panels:
         specifier: ^2.1.7
         version: 2.1.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1121,6 +1127,12 @@ packages:
   '@radix-ui/rect@1.1.0':
     resolution: {integrity: sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==}
 
+  '@slider-captcha/react@1.0.0':
+    resolution: {integrity: sha512-V5DexUldY2KEF24IOg1H6msTrPoCOiImXvBk9J31LiMxzJVg2/MOQWxuFIfYxyT1vmSMRP+HU/sx50PmS2cRQQ==}
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
 
@@ -1964,6 +1976,11 @@ packages:
 
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
+
+  react-puzzle-captcha@1.0.2:
+    resolution: {integrity: sha512-h1RgbGGCHtfMCdK7/Zwu5ej8Y6zlsjZbf49HMi6WRm3WV+AYZoA0Zr2Ltq2qjsK/8r9sxPi8O2yFhUXQEsiZiA==}
+    peerDependencies:
+      react: ^18.2.0
 
   react-remove-scroll-bar@2.3.8:
     resolution: {integrity: sha512-9r+yi9+mgU33AKcj6IbT9oRCO78WriSj6t/cF8DWBZJ9aOGPOTEDvdUDz1FwKim7QXWwmHqtdHnRJfhAxEG46Q==}
@@ -3205,6 +3222,12 @@ snapshots:
 
   '@radix-ui/rect@1.1.0': {}
 
+  '@slider-captcha/react@1.0.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      prop-types: 15.8.1
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
   '@swc/counter@0.1.3': {}
 
   '@swc/helpers@0.5.5':
@@ -4009,6 +4032,11 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
+
+  react-puzzle-captcha@1.0.2(react@19.1.0):
+    dependencies:
+      '@babel/runtime': 7.27.1
+      react: 19.1.0
 
   react-remove-scroll-bar@2.3.8(@types/react@19.1.4)(react@19.1.0):
     dependencies:

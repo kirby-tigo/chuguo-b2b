@@ -16,6 +16,46 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Search, ShoppingCart } from "lucide-react"
 
+// 分类数据
+const categories = {
+  imported: {
+    name: "进口水果",
+    description: "来自世界各地的优质进口水果，品种丰富，品质保障",
+    image: "/imported-fruits-banner.png",
+    subcategories: ["美国", "智利", "泰国", "澳大利亚", "新西兰", "南非"],
+  },
+  domestic: {
+    name: "国产水果",
+    description: "本地新鲜采摘的各类应季水果，从产地直达您的餐桌",
+    image: "/chinese-domestic-fruits-banner.png",
+    subcategories: ["海南", "山东", "新疆", "福建", "广西", "云南"],
+  },
+  tropical: {
+    name: "热带水果",
+    description: "香甜可口的热带特色水果，带给您不一样的味蕾体验",
+    image: "/tropical-fruits-banner.png",
+    subcategories: ["榴莲", "芒果", "菠萝", "椰子", "火龙果", "山竹"],
+  },
+  berries: {
+    name: "浆果类",
+    description: "营养丰富的各类新鲜浆果，富含抗氧化物质",
+    image: "/berries-banner.png",
+    subcategories: ["草莓", "蓝莓", "树莓", "黑莓", "樱桃", "葡萄"],
+  },
+  citrus: {
+    name: "柑橘类",
+    description: "维C丰富的各类柑橘水果，酸甜可口，健康美味",
+    image: "/citrus-banner.png",
+    subcategories: ["橙子", "柠檬", "柚子", "橘子", "金桔", "青柠"],
+  },
+  melons: {
+    name: "瓜果类",
+    description: "清爽多汁的各类瓜果，夏日解暑的最佳选择",
+    image: "/melons-banner.png",
+    subcategories: ["西瓜", "哈密瓜", "香瓜", "木瓜", "甜瓜", "蜜瓜"],
+  },
+}
+
 interface CategoryClientProps {
   params: {
     slug: string
@@ -24,16 +64,22 @@ interface CategoryClientProps {
 
 export default function CategoryClient({ params }: CategoryClientProps) {
   const { slug } = params
+  const category = categories[slug as keyof typeof categories]
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="relative h-[300px] overflow-hidden">
-        <Image src={"/placeholder.png"} alt="Category Image" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <div className="text-center text-white max-w-3xl px-4">
-            <h1 className="text-4xl font-bold mb-4">分类：{slug}</h1>
-          </div>
-        </div>
+      {/* 分类横幅图片，宽度自适应屏幕，高度自动按比例缩放 */}
+      <div className="w-screen overflow-x-hidden bg-white">
+        <Image 
+          src={category?.image || "/placeholder.png"} 
+          alt={category?.name || "分类图片"} 
+          width={1920}
+          height={300}
+          priority
+          quality={85}
+          className="w-full h-auto object-contain object-center"
+          style={{ backgroundColor: "#fff" }}
+        />
       </div>
 
       <div className="container mx-auto px-4 py-8">

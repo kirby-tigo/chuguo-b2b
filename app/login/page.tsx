@@ -1,10 +1,8 @@
 "use client"
 
-import type React from "react"
-
+import React from "react"
 import { useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,46 +10,57 @@ import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Loader2 } from "lucide-react"
+import SlideCaptcha from "@/components/SlideCaptcha"
 
 export default function LoginPage() {
-  const router = useRouter()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
   const [rememberMe, setRememberMe] = useState(false)
+  const [captchaPassed, setCaptchaPassed] = useState(false)
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!captchaPassed) {
+      setError("请完成拼图验证")
+      return
+    }
+
     setIsLoading(true)
     setError("")
 
-    // 简单的账号密码验证
-    if (username === "test" && password === "123456") {
-      const user = {
-        id: "user-1",
-        username: "test",
-        name: "测试用户",
-        email: "test@example.com",
-        phone: "13800138000",
-        company: "测试公司",
-        role: "buyer",
-        avatar: "/asian-businessman-portrait.png",
-      }
-      if (rememberMe) {
-        localStorage.setItem("user", JSON.stringify(user))
-      } else {
-        sessionStorage.setItem("user", JSON.stringify(user))
-      }
+    try {
+      // 简单的账号密码验证
+      if (username === "test" && password === "123456") {
+        const user = {
+          id: "user-1",
+          username: "test",
+          name: "测试用户",
+          email: "test@example.com",
+          phone: "13800138000",
+          company: "测试公司",
+          role: "buyer",
+          avatar: "/asian-businessman-portrait.png",
+        }
+        if (rememberMe) {
+          localStorage.setItem("user", JSON.stringify(user))
+        } else {
+          sessionStorage.setItem("user", JSON.stringify(user))
+        }
 
-      // 延迟跳转，模拟网络请求
-      setTimeout(() => {
+        // 延迟跳转，模拟网络请求
+        setTimeout(() => {
+          setIsLoading(false)
+          window.location.href = "/"
+        }, 1000)
+      } else {
         setIsLoading(false)
-        window.location.href = "/"
-      }, 1000)
-    } else {
+        setError("用户名或密码错误")
+      }
+    } catch (err) {
       setIsLoading(false)
-      setError("用户名或密码错误，请使用账号：test，密码：123456")
+      setError("登录失败，请重试")
     }
   }
 
@@ -60,10 +69,6 @@ export default function LoginPage() {
       <Card className="w-full max-w-md border-none shadow-lg">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">登录账户</CardTitle>
-          <CardDescription className="text-center">
-            输入您的账号信息登录果然好忙
-            <div className="mt-1 text-sm font-medium text-emerald-600">测试账号：test，密码：123456</div>
-          </CardDescription>
         </CardHeader>
 
         <Tabs defaultValue="account" className="w-full">
@@ -102,6 +107,12 @@ export default function LoginPage() {
                     required
                   />
                 </div>
+                <div className="my-4">
+                  <SlideCaptcha
+                    onSuccess={() => setCaptchaPassed(true)}
+                    onFail={() => setCaptchaPassed(false)}
+                  />
+                </div>
                 <div className="flex items-center space-x-2">
                   <Checkbox id="remember2" checked={rememberMe} onCheckedChange={v => setRememberMe(!!v)} />
                   <label
@@ -115,7 +126,7 @@ export default function LoginPage() {
                   type="submit"
                   className="w-full bg-emerald-600 hover:bg-emerald-700"
                   size="lg"
-                  disabled={isLoading}
+                  disabled={isLoading || !captchaPassed}
                 >
                   {isLoading ? (
                     <>

@@ -56,7 +56,7 @@ export default function Home() {
               专业的B2B水果批发平台
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              果然好忙
+              楚果集采
               <span className="block text-emerald-300">新鲜直达，品质保障</span>
             </h1>
             <p className="text-lg text-white/80 max-w-md">连接全球优质水果产地，为批发商提供一站式采购解决方案</p>
@@ -194,7 +194,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">连锁门店赋能</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              果然好忙为连锁水果门店提供全方位的供应链解决方案，助力门店降本增效，实现业务增长
+              楚果集采为连锁水果门店提供全方位的供应链解决方案，助力门店降本增效，实现业务增长
             </p>
           </div>
 
@@ -297,7 +297,7 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-2xl font-bold">全方位门店运营支持</h3>
               <p className="text-muted-foreground">
-                除了优质的水果供应，果然好忙还为连锁门店提供运营培训、营销策划、品牌建设等全方位支持，帮助门店提升竞争力，实现可持续发展。
+                除了优质的水果供应，楚果集采还为连锁门店提供运营培训、营销策划、品牌建设等全方位支持，帮助门店提升竞争力，实现可持续发展。
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center gap-2">

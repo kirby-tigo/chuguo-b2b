@@ -77,7 +77,17 @@ export default function Footer() {
         </div>
 
         <div className="border-t pt-8 text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} 果然好忙. 保留所有权利.</p>
+          <p>Copyright © 2024 - {new Date().getFullYear()} 湖北果然好忙连锁管理有限公司 版权所有</p>
+          <p className="mt-2">
+            <a 
+              href="http://beian.miit.gov.cn/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
+            >
+              鄂ICP备2025117462号-1
+            </a>
+          </p>
         </div>
       </div>
     </footer>

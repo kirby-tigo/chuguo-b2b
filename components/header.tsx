@@ -38,7 +38,7 @@ export default function Header() {
             <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xl">
               楚
             </div>
-            <span className="text-xl font-bold">果然好忙</span>
+            <span className="text-xl font-bold">楚果集采</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -207,7 +207,7 @@ export default function Header() {
                       <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">
                         楚
                       </div>
-                      <span className="text-lg font-bold">果然好忙</span>
+                      <span className="text-lg font-bold">楚果集采</span>
                     </Link>
                     <div className="grid gap-3">
                       <Link href="/" className="text-lg font-medium">

@@ -40,7 +40,7 @@ export default function FAQPage() {
         <TabsContent value="platform">
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="item-1" className="border rounded-lg border-emerald-100 px-4">
-              <AccordionTrigger className="text-lg font-medium py-4">如何注册成为果然好忙的会员？</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-medium py-4">如何注册成为楚果集采的会员？</AccordionTrigger>
               <AccordionContent className="pb-4 text-muted-foreground">
                 注册成为果然好忙会员非常简单。点击网站右上角的"注册"按钮，填写公司信息、联系人信息和营业执照等资料，提交审核后，我们会在1-2个工作日内完成审核，并通过短信和邮件通知您审核结果。
               </AccordionContent>

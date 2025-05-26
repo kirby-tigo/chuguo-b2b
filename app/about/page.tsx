@@ -12,7 +12,7 @@ export default function AboutPage() {
         <Image src="/placeholder.png" alt="果然好忙" fill className="object-cover" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <div className="text-center text-white max-w-3xl px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">关于果然好忙</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">关于楚果集采</h1>
             <p className="text-xl">连接全球优质水果产地，为批发商提供一站式采购解决方案</p>
           </div>
         </div>
@@ -24,20 +24,20 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">公司简介</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              果然好忙是一家专注于水果批发领域的B2B电商平台，致力于为批发商和连锁门店提供优质的水果采购服务
+              楚果集采是一家专注于水果批发领域的B2B电商平台，致力于为批发商和连锁门店提供优质的水果采购服务
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p>
-                果然好忙成立于2018年，总部位于湖北武汉，是一家专注于水果批发领域的B2B电商平台。我们致力于通过互联网技术，连接全球优质水果产地和批发商，打造高效透明的水果供应链生态系统。
+                楚果集采成立于2018年，总部位于湖北武汉，是一家专注于水果批发领域的B2B电商平台。我们致力于通过互联网技术，连接全球优质水果产地和批发商，打造高效透明的水果供应链生态系统。
               </p>
               <p>
-                经过多年发展，果然好忙已建立起覆盖全国的供应网络，与500多家优质供应商达成长期合作，服务超过5万家批发商和连锁门店客户。我们提供超过2000种水果品类，月交易额突破1亿元。
+                经过多年发展，楚果集采已建立起覆盖全国的供应网络，与500多家优质供应商达成长期合作，服务超过5万家批发商和连锁门店客户。我们提供超过2000种水果品类，月交易额突破1亿元。
               </p>
               <p>
-                我们的使命是"让水果采购更简单"，通过数字化、标准化的服务，帮助批发商降低采购成本，提高运营效率，实现业务增长。未来，果然好忙将继续深耕水果批发领域，不断创新服务模式，为行业发展贡献力量。
+                我们的使命是"让水果采购更简单"，通过数字化、标准化的服务，帮助批发商降低采购成本，提高运营效率，实现业务增长。未来，楚果集采将继续深耕水果批发领域，不断创新服务模式，为行业发展贡献力量。
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -65,7 +65,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">发展历程</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              从创立至今，果然好忙不断创新发展，成为水果批发领域的领先平台
+              从创立至今，楚果集采不断创新发展，成为水果批发领域的领先平台
             </p>
           </div>
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 {
                   year: "2018年",
                   title: "公司成立",
-                  content: "果然好忙在武汉成立，开始探索水果批发B2B模式",
+                  content: "楚果集采在武汉成立，开始探索水果批发B2B模式",
                 },
                 {
                   year: "2019年",
@@ -133,7 +133,7 @@ export default function AboutPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">核心优势</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              果然好忙凭借强大的供应链能力和专业的服务团队，为客户提供卓越的采购体验
+              楚果集采凭借强大的供应链能力和专业的服务团队，为客户提供卓越的采购体验
             </p>
           </div>
 

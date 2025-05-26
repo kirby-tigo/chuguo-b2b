@@ -31,7 +31,7 @@ export default function ChainStoreSolutionPage() {
               <Badge className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 mb-4">连锁门店赋能</Badge>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">全方位连锁门店解决方案</h1>
               <p className="text-xl text-white/90 mb-8 max-w-2xl">
-                从供应链优化到数字化运营，果然好忙为水果连锁门店提供一站式解决方案，助力您的业务增长
+                从供应链优化到数字化运营，楚果集采为水果连锁门店提供一站式解决方案，助力您的业务增长
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" className="bg-white text-emerald-800 hover:bg-white/90">
@@ -52,7 +52,7 @@ export default function ChainStoreSolutionPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">解决方案概述</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              果然好忙为连锁水果门店提供全方位的供应链和运营解决方案，帮助您降本增效，实现业务增长
+              楚果集采为连锁水果门店提供全方位的供应链和运营解决方案，帮助您降本增效，实现业务增长
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export default function ChainStoreSolutionPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">供应链优化</h3>
                 <p className="text-muted-foreground mb-4">
-                  整合优质供应商资源，提供高效的物流配送服务，确保门店能够以最优价格获取新鲜水果
+                  楚果集采整合全国优质水果产地资源，建立高效的供应链网络，为连锁门店提供稳定、优质、价格合理的水果供应。
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm">
@@ -96,7 +96,7 @@ export default function ChainStoreSolutionPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">门店管理系统</h3>
                 <p className="text-muted-foreground mb-4">
-                  提供专业的门店管理系统，包括库存管理、销售统计、员工管理等功能，帮助门店实现数字化运营
+                  楚果集采提供专业的门店管理系统，帮助连锁门店实现数字化运营，提高管理效率，降低运营成本。
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm">
@@ -128,7 +128,7 @@ export default function ChainStoreSolutionPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">数据分析与决策</h3>
                 <p className="text-muted-foreground mb-4">
-                  基于大数据分析，为连锁门店提供市场趋势、消费者偏好等洞察，辅助门店制定经营策略
+                  楚果集采利用大数据技术，为连锁门店提供市场趋势、消费者偏好等洞察，辅助门店制定经营策略。
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm">
@@ -190,7 +190,7 @@ export default function ChainStoreSolutionPage() {
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold">供应链优化解决方案</h3>
                   <p className="text-muted-foreground">
-                    果然好忙整合全国优质水果产地资源，建立高效的供应链网络，为连锁门店提供稳定、优质、价格合理的水果供应。
+                    楚果集采整合全国优质水果产地资源，建立高效的供应链网络，为连锁门店提供稳定、优质、价格合理的水果供应。
                   </p>
 
                   <div className="space-y-4">
@@ -249,7 +249,7 @@ export default function ChainStoreSolutionPage() {
                 <div className="order-1 md:order-2 space-y-6">
                   <h3 className="text-2xl font-bold">门店管理系统</h3>
                   <p className="text-muted-foreground">
-                    果然好忙提供专业的门店管理系统，帮助连锁门店实现数字化运营，提高管理效率，降低运营成本。
+                    楚果集采提供专业的门店管理系统，帮助连锁门店实现数字化运营，提高管理效率，降低运营成本。
                   </p>
 
                   <div className="space-y-4">
@@ -300,7 +300,7 @@ export default function ChainStoreSolutionPage() {
                 <div className="space-y-6">
                   <h3 className="text-2xl font-bold">数据分析与决策支持</h3>
                   <p className="text-muted-foreground">
-                    果然好忙利用大数据技术，为连锁门店提供市场趋势、消费者偏好等洞察，辅助门店制定经营策略。
+                    楚果集采利用大数据技术，为连锁门店提供市场趋势、消费者偏好等洞察，辅助门店制定经营策略。
                   </p>
 
                   <div className="space-y-4">
@@ -369,7 +369,7 @@ export default function ChainStoreSolutionPage() {
                 <div className="order-1 md:order-2 space-y-6">
                   <h3 className="text-2xl font-bold">营销与会员管理</h3>
                   <p className="text-muted-foreground">
-                    果然好忙提供全方位的营销支持和会员管理系统，帮助连锁门店提升品牌影响力，增强客户粘性。
+                    楚果集采提供全方位的营销支持和会员管理系统，帮助连锁门店提升品牌影响力，增强客户粘性。
                   </p>
 
                   <div className="space-y-4">
@@ -430,7 +430,7 @@ export default function ChainStoreSolutionPage() {
                 company: "鲜果一号连锁",
                 logo: "/placeholder.svg?height=80&width=80&query=fruit store logo 1",
                 content:
-                  "通过果然好忙的供应链优化和门店管理系统，我们的采购成本降低了15%，库存周转率提高了30%，门店运营效率显著提升。",
+                  "通过楚果集采的供应链优化和门店管理系统，我们的采购成本降低了15%，库存周转率提高了30%，门店运营效率显著提升。",
                 person: "李经理",
                 position: "运营总监",
               },
@@ -438,7 +438,7 @@ export default function ChainStoreSolutionPage() {
                 company: "果然鲜水果超市",
                 logo: "/placeholder.svg?height=80&width=80&query=fruit store logo 2",
                 content:
-                  "果然好忙的数据分析系统帮助我们更好地了解消费者需求，优化了商品结构，提高了毛利率，同时会员管理系统增强了客户粘性。",
+                  "楚果集采的数据分析系统帮助我们更好地了解消费者需求，优化了商品结构，提高了毛利率，同时会员管理系统增强了客户粘性。",
                 person: "张总",
                 position: "创始人",
               },
@@ -446,7 +446,7 @@ export default function ChainStoreSolutionPage() {
                 company: "优鲜果业",
                 logo: "/placeholder.svg?height=80&width=80&query=fruit store logo 3",
                 content:
-                  "作为一家拥有30多家门店的连锁企业，果然好忙的解决方案帮助我们实现了标准化管理，提高了品牌影响力，业务实现了快速增长。",
+                  "作为一家拥有30多家门店的连锁企业，楚果集采的解决方案帮助我们实现了标准化管理，提高了品牌影响力，业务实现了快速增长。",
                 person: "王老板",
                 position: "CEO",
               },
@@ -483,7 +483,7 @@ export default function ChainStoreSolutionPage() {
         <div className="mb-16 bg-emerald-50 rounded-xl p-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-3">选择我们的优势</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">果然好忙为连锁门店提供的解决方案具有哪些独特优势</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">楚果集采为连锁门店提供的解决方案具有哪些独特优势</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -557,7 +557,7 @@ export default function ChainStoreSolutionPage() {
                   "是的，我们提供全方位的技术支持和培训服务。包括系统使用培训、运营指导、技术问题解答等。我们有专业的客服团队，提供7*12小时的在线支持，确保您的业务顺利运行。",
               },
               {
-                question: "如何开始使用果然好忙的解决方案？",
+                question: "如何开始使用楚果集采的解决方案？",
                 answer:
                   "您可以通过官网预约演示，或直接联系我们的销售顾问。我们会安排专人了解您的需求，提供定制化的解决方案建议，并安排系统演示。确认合作后，我们会制定详细的实施计划，确保顺利上线。",
               },

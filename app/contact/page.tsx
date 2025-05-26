@@ -51,7 +51,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-lg">公司地址</h3>
                   <p className="text-muted-foreground mb-1">湖北省武汉市洪山区光谷大道77号</p>
-                  <p className="text-sm text-muted-foreground">果然好忙总部大厦</p>
+                  <p className="text-sm text-muted-foreground">果楚果集采总部大厦</p>
                 </div>
               </div>
 

@@ -5,8 +5,8 @@ import { FAQContact } from "@/components/faq-contact"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "常见问题 - 果然好忙",
-  description: "果然好忙常见问题解答，帮助您了解平台使用方法、账户管理、采购流程、物流配送等相关问题。",
+  title: "常见问题 - 云镜星途",
+  description: "云镜星途常见问题解答，帮助您了解平台使用方法、账户管理、采购流程、物流配送等相关问题。",
 }
 
 export default function FAQPage() {
@@ -15,7 +15,7 @@ export default function FAQPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">常见问题</h1>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          为您解答关于果然好忙平台的常见问题，帮助您更好地了解我们的服务和使用方法
+          为您解答关于云镜星途平台的常见问题，帮助您更好地了解我们的服务和使用方法
         </p>
       </div>
 
@@ -40,9 +40,9 @@ export default function FAQPage() {
         <TabsContent value="platform">
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="item-1" className="border rounded-lg border-emerald-100 px-4">
-              <AccordionTrigger className="text-lg font-medium py-4">如何注册成为楚果集采的会员？</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-medium py-4">如何注册成为钛果集采的会员？</AccordionTrigger>
               <AccordionContent className="pb-4 text-muted-foreground">
-                注册成为果然好忙会员非常简单。点击网站右上角的"注册"按钮，填写公司信息、联系人信息和营业执照等资料，提交审核后，我们会在1-2个工作日内完成审核，并通过短信和邮件通知您审核结果。
+                注册成为云镜星途会员非常简单。点击网站右上角的"注册"按钮，填写公司信息、联系人信息和营业执照等资料，提交审核后，我们会在1-2个工作日内完成审核，并通过短信和邮件通知您审核结果。
               </AccordionContent>
             </AccordionItem>
 
@@ -73,9 +73,9 @@ export default function FAQPage() {
                 您可以通过以下方式联系我们的客服：
                 <ul className="list-disc pl-6 mt-2 space-y-1">
                   <li>客服电话：400-123-4567（周一至周日 9:00-18:00）</li>
-                  <li>电子邮箱：service@chuguo.com</li>
+                  <li>电子邮箱：sunlong@tigosc.net</li>
                   <li>在线客服：点击网站右下角的客服图标</li>
-                  <li>微信公众号：搜索"果然好忙"</li>
+                  <li>微信公众号：搜索"云镜星途"</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>
@@ -84,7 +84,7 @@ export default function FAQPage() {
               <AccordionTrigger className="text-lg font-medium py-4">平台是否有移动端应用？</AccordionTrigger>
               <AccordionContent className="pb-4 text-muted-foreground">
                 是的，我们提供移动端应用，您可以在App Store或Google
-                Play商店搜索"果然好忙"下载安装。移动端应用支持采购下单、订单查询、物流跟踪等功能，方便您随时随地管理采购事务。
+                Play商店搜索"云镜星途"下载安装。移动端应用支持采购下单、订单查询、物流跟踪等功能，方便您随时随地管理采购事务。
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -294,9 +294,9 @@ export default function FAQPage() {
                 您可以通过以下方式联系售后客服：
                 <ul className="list-disc pl-6 mt-2 space-y-1">
                   <li>售后专线：400-123-4568（周一至周日 9:00-20:00）</li>
-                  <li>售后邮箱：after-sales@chuguo.com</li>
+                  <li>售后邮箱：sunlong@tigosc.net</li>
                   <li>在线客服：点击网站右下角"售后服务"图标</li>
-                  <li>微信公众号：搜索"果然好忙"，进入菜单"客户服务"-"售后支持"</li>
+                  <li>微信公众号：搜索"云镜星途"，进入菜单"客户服务"-"售后支持"</li>
                 </ul>
               </AccordionContent>
             </AccordionItem>

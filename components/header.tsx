@@ -35,10 +35,10 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xl">
-              楚
+            <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm">
+              Tigo
             </div>
-            <span className="text-xl font-bold">楚果集采</span>
+            <span className="text-xl font-bold">钛果集采</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -204,10 +204,10 @@ export default function Header() {
                 <SheetContent side="right">
                   <div className="grid gap-6 py-6">
                     <Link href="/" className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">
-                        楚
+                      <div className="w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xs">
+                        Tigo
                       </div>
-                      <span className="text-lg font-bold">楚果集采</span>
+                      <span className="text-lg font-bold">钛果集采</span>
                     </Link>
                     <div className="grid gap-3">
                       <Link href="/" className="text-lg font-medium">

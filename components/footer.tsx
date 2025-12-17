@@ -8,10 +8,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-xl">
-                楚
+              <div className="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm">
+                Tigo
               </div>
-              <span className="text-xl font-bold">果然好忙</span>
+              <span className="text-xl font-bold">钛果集采</span>
             </Link>
             <p className="text-muted-foreground mb-4">专业的B2B水果批发平台，为您提供新鲜优质的水果</p>
             <div className="flex space-x-4">
@@ -68,16 +68,15 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">联系方式</h3>
             <address className="not-italic space-y-2 text-muted-foreground">
-              <p>湖北省武汉市洪山区</p>
-              <p>光谷大道77号</p>
-              <p>电话: 400-123-4567</p>
-              <p>邮箱: info@chuguo.com</p>
+              <p>地址: 江苏省南京市江宁区东山街道拓弘大厦1406室</p>
+              <p>电话: 025-51199015</p>
+              <p>邮箱: sunlong@tigosc.net</p>
             </address>
           </div>
         </div>
 
         <div className="border-t pt-8 text-center text-muted-foreground">
-          <p>Copyright © 2024 - {new Date().getFullYear()} 湖北果然好忙连锁管理有限公司 版权所有</p>
+          <p>Copyright © 2024 - {new Date().getFullYear()} 南京云镜星途科技有限公司 版权所有</p>
           <p className="mt-2">
             <a 
               href="http://beian.miit.gov.cn/" 
@@ -85,7 +84,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
             >
-              鄂ICP备2025117462号-1
+              苏ICP备2023025305号-5A
             </a>
           </p>
         </div>

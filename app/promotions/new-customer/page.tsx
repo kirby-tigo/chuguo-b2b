@@ -57,7 +57,7 @@ export default function NewCustomerPromotionPage() {
 
                 <div className="space-y-6">
                   <p className="text-muted-foreground">
-                    为了感谢新客户的信任与支持，果然好忙特推出新客户专享优惠活动。首次注册并采购满5000元，即可立减300元，让您的第一次采购更加划算！
+                    为了感谢新客户的信任与支持，云镜星途特推出新客户专享优惠活动。首次注册并采购满5000元，即可立减300元，让您的第一次采购更加划算！
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -122,7 +122,7 @@ export default function NewCustomerPromotionPage() {
                           1
                         </div>
                         <h3 className="font-semibold text-lg mb-2">注册账号</h3>
-                        <p className="text-muted-foreground">在果然好忙官网完成企业账号注册，提交相关资质材料。</p>
+                        <p className="text-muted-foreground">在云镜星途官网完成企业账号注册，提交相关资质材料。</p>
                       </div>
 
                       <div className="relative pl-12">
@@ -186,7 +186,7 @@ export default function NewCustomerPromotionPage() {
 
                   <div className="flex gap-2">
                     <AlertCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">果然好忙保留对活动的最终解释权。</p>
+                    <p className="text-muted-foreground">云镜星途保留对活动的最终解释权。</p>
                   </div>
                 </div>
               </CardContent>
@@ -417,7 +417,7 @@ export default function NewCustomerPromotionPage() {
 
                   <p className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-emerald-600" />
-                    <span>service@chuguo.com</span>
+                    <span>sunlong@tigosc.net</span>
                   </p>
 
                   <p className="flex items-center gap-2">

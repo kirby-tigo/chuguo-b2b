@@ -16,9 +16,9 @@ export async function sendVerificationEmail(email: string, userId: string) {
   await transporter.sendMail({
     from: process.env.SMTP_FROM,
     to: email,
-    subject: "验证您的邮箱 - 楚果集采",
+    subject: "验证您的邮箱 - 钛果集采",
     html: `
-      <h1>欢迎加入楚果集采</h1>
+      <h1>欢迎加入钛果集采</h1>
       <p>请点击下面的链接验证您的邮箱：</p>
       <a href="${verificationLink}">${verificationLink}</a>
       <p>如果您没有注册账号，请忽略此邮件。</p>
@@ -32,7 +32,7 @@ export async function sendPasswordResetEmail(email: string, token: string) {
   await transporter.sendMail({
     from: process.env.SMTP_FROM,
     to: email,
-    subject: "重置密码 - 楚果集采",
+    subject: "重置密码 - 钛果集采",
     html: `
       <h1>重置密码</h1>
       <p>请点击下面的链接重置您的密码：</p>
